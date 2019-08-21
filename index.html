@@ -18,12 +18,6 @@
     <script src="./js/p5.min.js"></script>
     <script src="./js/gallery.min.js"></script>
     <script src="./js/vanta.birds.min.js"></script>
-    <script>
-    VANTA.BIRDS({
-      el: "#wm",
-      backgroundColor: 0x3498db
-    })
-    </script>
 </head>
 
 <body>
@@ -71,11 +65,15 @@
         <!-- End #lead-content -->
 
         <div id="lead-overlay"></div>
-
+        
         <div id="lead-down">
+
             <span>
                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
             </span>
+        </div>
+        <div class="bottom-left">
+              <span id="fps"></span>
         </div>
         <!-- End #lead-down -->
     </div>
@@ -137,6 +135,13 @@
                     Data Science arm of Kroger stores. Developed and outlier detection system in SQL to programmatically parse incoming Controlled Store Test (CST) data for executional errors. CSTs allow Kroger and its consumer packaged goods (CPG) providers (P&G, Burt's Bees, etc.) to experiment with different store layouts and product packaging. These tests are difficult to conduct because holding extraneous variables constant is extremely difficult. My task was to validate testing data was suitable for further analysis and not greatly impacted by confounding factors. Ultimately, my solution ran in less than 30 seconds and detected over 85% of known executional issues historically, saving analysts 4 - 8 hours per test.
                 </p>
             </div>
+            <div data-date="May 2015 – August 2015">
+                <h3>Purdue University<span>&#176;</span></h3>
+                <h4>Chemistry Research Fellow</h4>
+                <p>
+                    Summer undergraduate research fellow (SURF) in Dr. Suzanne Bart's inorganic Chemistry lab group. Mentored by PhD student John Kiernicki and worked to generate Rhodium and Iridium organo-metallic complexes by successfully attaching organic ligands to the structure. Metal-mediated organic transformations with f-block compounds, particularly those with low oxidation states, are difficult to conduct. Over the summer I was able to generate one Iridium crystal structure of adequate quality, and determine its resulting structure using H1 NMR (certified over summer), IR spectroscopy, and other diagnostic tests.
+                </p>
+            </div>
         </div>
     </div>
     <!-- End #experience -->
@@ -146,30 +151,12 @@
         <div class="education-block">
             <h3>DePauw University</h3>
             <span class="education-date">August 2014 - May 2018</span>
-            <h4>Bachelor of Arts in Mathematics</h4>
-            <h4>Bachelor of Arts in Economics</h4>
-            <h4>Minor in Computer Science</h4>
+            <h4>Bachelor of Arts in Mathematics <br>
+            Bachelor of Arts in Economics <br>
+            Minor in Computer Science</h4>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
+                After briefly considering a career in analytical Chemistry, I transistioned my focus to Applied Mathematics and its intersection with Economics and Computer Science. This quickly led me to the growing field of Data Science, for which I grew a strong passion that extended beyond the classroom. With the help of a few friends, I launched DePauw's Data Science Group (DPUDS) in 2017. This group focused on cultivating interest in and awareness of Artificial Intelligence through teaching, demonstrations, informal discussions, and competitions. Over the two years I served as its President, DPUDS procured multiple sources of funding, won Data Science hackathons, completed over a dozen projects, and grew to be one of the largest groups on campus. I graduated in 2018 with degrees in Mathematics and Economics, Summa Cum Laude. 
             </p>
-        </div>
-        <!-- End .education-block -->
-
-        <div class="education-block">
-            <h3>University of Ottawa</h3>
-            <span class="education-date">Sept 2016 - Sept 2017</span>
-            <h4>Bachelor of Science in Computer Science</h4>
-            <ul>
-                <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </li>
-                <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </li>
-                <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </li>
-            </ul>
         </div>
         <!-- End .education-block -->
     </div>
@@ -182,11 +169,12 @@
             <div class="row">
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="images/project.jpg" />
+                        <img src="images/project.jpg" width = 300 height = 300/>
                     </div>
                     <!-- End .research-image -->
                     <div class="project-info">
-                        <h3>Project Name Here</h3>
+                        <h3>Minimizing the Societal Cost of Credit Card Fraud with Limited and Imbalanced Data</h3>
+                        <h5>Preprint submitted to <i>Expert Systems with Applications</i></h5>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
                         </p>
@@ -202,9 +190,9 @@
                     </div>
                     <!-- End .research-image -->
                     <div class="project-info">
-                        <h3>Project Name Here</h3>
+                        <h3>Validating Weak Form Market Efficiency in American Stock Markets with Trend Deterministic Price Data and Machine Learning</h3>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
+                            The Efficient Market Hypothesis has been a staple of economics research for decades. In particular, weak form market efficiency –the notion that past prices cannot predict future performance – is strongly supported by econometric evidence. In contrast, machine learning  algorithms  implemented  to  predict  stock  price  have  been  touted,  to  varying  degrees,  as  successful.   Moreover,  somedata scientists boast the ability to garner above-market returns using price data alone.  This study ...
                         </p>
                         <a href="#">View Project</a>
                     </div>
@@ -221,9 +209,16 @@
         <ul>
             
             <li>Python</li>
-            
             <li>Java</li>
             <li>SQL</li>
+            <li>C++</li>
+            <li>Machine Learning</li>
+            <li>NLP</li>
+            <li>Deep Learning</li>
+            <li>ETL</li>
+            <li>LaTeX</li>
+            <li>HTML</li>
+            <li>CSS</li>
             <li>Apache Hive</li>
             <li>SparkML</li>
             <li>Tensorflow</li>
@@ -240,7 +235,7 @@
             <div class="row">
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="images/project.jpg" />
+                        <img src="images/NEFT_snake.gif" width = 300 height = 300/>
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
