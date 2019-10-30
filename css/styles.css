@@ -21,6 +21,12 @@ body.active {
 	z-index: -1
 }
 
+.moveimage
+{
+    position: relative;
+    top: 12px;
+}
+
 .no-js #experience-timeline>div {
 	background: #fff;
 	padding: 10px;
