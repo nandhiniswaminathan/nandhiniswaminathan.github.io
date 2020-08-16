@@ -871,7 +871,10 @@ footer {
 	.education-conatiner span {
 		float: none
 	}
-	.education_image,
+	.education_image
+	{
+		display: none
+	}
 	.project-image {
 		display: none
 	}
