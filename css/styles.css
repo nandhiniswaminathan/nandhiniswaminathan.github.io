@@ -868,10 +868,10 @@ footer {
 		display: none
 	}
 	.education-container h3,
-	.education-conatiner span,
-	.education-block {
+	.education-conatiner span {
 		float: none
 	}
+	.education_image,
 	.project-image {
 		display: none
 	}
