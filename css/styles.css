@@ -558,6 +558,8 @@ footer {
 	color: #74808a;
 	font-size: 0.9em;
 	float: left;
+	vertical-align: top;
+	margin-bottom: 15px;
 }
 
 .education-block ul {
@@ -876,6 +878,10 @@ footer {
 	}
 	.project-image {
 		display: none
+	}
+	.education-container
+	{
+		border: 1px solid #dcd9d9
 	}
 	.project-info {
 		position: relative;
