@@ -16,24 +16,28 @@
     $('html').removeClass('no-js');
 
     // // Animate to section when nav is clicked
-    // $('header a').click(function(e) {
+    //THIS BELOW WAS COMMENTED
 
-    //     // Treat as normal link if no-scroll class
-    //     if ($(this).hasClass('no-scroll')) return;
+    $('header a').click(function(e) {
 
-    //     e.preventDefault();
-    //     var heading = $(this).attr('href');
-    //     var scrollDistance = $(heading).offset().top;
+        // Treat as normal link if no-scroll class
+        if ($(this).hasClass('no-scroll')) return;
 
-    //     $('html, body').animate({
-    //         scrollTop: scrollDistance + 'px'
-    //     }, Math.abs(window.pageYOffset - $(heading).offset().top) / 1);
+        e.preventDefault();
+        var heading = $(this).attr('href');
+        var scrollDistance = $(heading).offset().top;
 
-    //     // Hide the menu once clicked if mobile
-    //     if ($('header').hasClass('active')) {
-    //         $('header, body').removeClass('active');
-    //     }
-    // });
+        $('html, body').animate({
+            scrollTop: scrollDistance + 'px'
+        }, Math.abs(window.pageYOffset - $(heading).offset().top) / 1);
+
+        // Hide the menu once clicked if mobile
+        if ($('header').hasClass('active')) {
+            $('header, body').removeClass('active');
+        }
+    });
+
+    //THIS WAS UNCOMMENTED
 
 
     // Create timeline
