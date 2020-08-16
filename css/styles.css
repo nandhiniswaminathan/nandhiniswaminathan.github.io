@@ -867,8 +867,9 @@ footer {
 	#lead-down {
 		display: none
 	}
-	.education-block h3,
-	.education-block span {
+	.education-container h3,
+	.education-conatiner span,
+	.education-block {
 		float: none
 	}
 	.project-image {
