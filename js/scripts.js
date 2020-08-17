@@ -84,4 +84,12 @@
         });
     });
 
+    // Load additional projects
+    $('#view-more-experiences').click(function(e){
+        e.preventDefault();
+        $(this).fadeOut(300, function() {
+            $('#more-experiences').fadeIn(300);
+        });
+    });
+
 })(jQuery);
