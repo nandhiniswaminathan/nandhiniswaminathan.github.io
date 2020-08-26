@@ -392,6 +392,22 @@ footer {
 	margin: 0
 }
 
+#blog {
+	padding: 50px 15px;
+	text-align: center;
+	border-bottom: 1px solid #dcd9d9
+}
+
+#blog h2 {
+	color: #374054
+}
+
+#blog p {
+	text-align:left;
+	color: #74808a;
+	margin: 0
+}
+
 #experience {
 	padding: 50px 15px;
 	text-align: center;
