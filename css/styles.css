@@ -858,34 +858,34 @@ footer {
 
 }
 
-/* @media only screen and (max-width: 992px) { */
-/* 	#lead { */
-/* 		height: auto; */
-/* 		min-height: auto; */
-/* 		max-height: auto; */
-/* 		padding: 100px 15px */
-/* 	} */
-/* 	#lead-content { */
-/* 		position: relative; */
-/* 		transform: none; */
-/* 		left: auto; */
-/* 		top: auto */
-/* 	} */
-/* 	#lead-content h1 { */
-/* 		font-size: 3em */
-/* 	} */
-/* 	#lead-content h2 { */
-/* 		font-size: 1.75em */
-/* 	} */
-/* 	#about { */
-/* 		text-align: center */
-/* 	} */
-/* 	#about p { */
-/* 		text-align: left */
-/* 	} */
-/* } */
+@media only screen and (max-width: 992px) {
+	#lead {
+		height: auto;
+		min-height: auto;
+		max-height: auto;
+		padding: 100px 15px
+	}
+	#lead-content {
+		position: relative;
+		transform: none;
+		left: auto;
+		top: auto
+	}
+	#lead-content h1 {
+		font-size: 3em
+	}
+	#lead-content h2 {
+		font-size: 1.75em
+	}
+	#about {
+		text-align: center
+	}
+	#about p {
+		text-align: left
+	}
+}
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 768px) {
 	header {
 		position: fixed;
 		display: none;
