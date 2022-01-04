@@ -959,7 +959,7 @@ footer {
 		bottom: 0;
 		height: 100%
 	}
-	#myBtn{
+	button#myBtn{
 		display: none;
 	}
 	#mobile-menu-open,
