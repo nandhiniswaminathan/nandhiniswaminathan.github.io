@@ -860,7 +860,7 @@ footer {
 
 @media only screen and (max-width: 992px) {
 	#lead {
-		height: auto;
+		height: 100vh;
 		min-height: auto;
 		max-height: auto;
 		padding: 100px 15px
@@ -869,13 +869,52 @@ footer {
 		position: relative;
 		transform: none;
 		left: auto;
-		top: auto
+		top: 40%;
 	}
 	#lead-content h1 {
 		font-size: 3em
 	}
 	#lead-content h2 {
 		font-size: 1.75em
+	}
+
+	.education-container h3,
+	.education-conatiner span {
+		float: none
+	}
+	.education-image
+	{
+		display: none
+	}
+	.project-image {
+		display: none
+	}
+	.education-container
+	{
+		border: 1px solid #dcd9d9
+	}
+	.project-info {
+		position: relative;
+		margin: 0;
+		padding: 30px 15px;
+		top: auto;
+		transform: none
+	}
+	.education-block {
+		position: relative;
+		margin: 0;
+		padding: 30px 15px;
+		top: auto;
+		transform: none
+	}
+
+	.vtimeline-content h3
+	{
+		font-size: 1.5em;
+		font-weight: 300;
+		color: #374054;
+		display: inline-block;
+		margin: 0
 	}
 	#about {
 		text-align: center
@@ -886,6 +925,7 @@ footer {
 }
 
 @media only screen and (max-width: 768px) {
+
 	header {
 		position: fixed;
 		display: none;
@@ -908,6 +948,13 @@ footer {
 	#menu li {
 		display: block;
 		margin-bottom: 10px
+	}
+
+	#lead-content {
+		position: relative;
+		transform: none;
+		left: auto;
+		top: auto
 	}
 	#lead-content h1 {
 		font-size: 2em
