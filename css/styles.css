@@ -898,9 +898,9 @@ footer {
 		font-size: 1.75em
 	}
 
-	button#myBtn{
+	#myBtn button{
 		bottom:10px;
-		right:10px
+		right:10px;
 		padding:10px;
 		}
 	.education-container h3,
