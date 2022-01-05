@@ -141,7 +141,7 @@ header.sticky {
 	background: #fff
 }
 
-button#myBtn {
+#myBtn button{
   display: none;
   position: fixed;
   bottom: 20px;
@@ -157,7 +157,7 @@ button#myBtn {
   border-radius: 4px;
 }
 
-button#myBtn:hover {
+#myBtn button:hover{
   background-color: #6f7375;
 }
 
