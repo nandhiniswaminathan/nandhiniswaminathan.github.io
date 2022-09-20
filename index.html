@@ -71,7 +71,8 @@
         <div id="lead-content">
             <h1>Sam Showalter</h1>
             <h2>  </h2>
-            <a href="docs/SamuelShowalterCV.pdf" target = "_blank" class="btn-rounded-white">Download CV</a>
+            <a href="docs/SamuelShowalterIndustryCV.pdf" target = "_blank" class="btn-rounded-white">Industry CV</a>
+            <a href="docs/SamuelShowalterAcademicCV.pdf" target = "_blank" class="btn-rounded-white">Academic CV</a>
         </div>
         <!-- End #lead-content -->
         
@@ -110,13 +111,16 @@
                 <div class="col-md-8">
                     <p>
                         <br><br><br>
-                        I am a Machine Learning and AI PhD student in UC Irvine's <a href="https://www.ics.uci.edu/~smyth/research_group.html" target="_blank">DataLab Group</a>. My research explores machine learning robustness in computer vision, natural language, and reinforcement learning applications. In particular, I explore methods of conducting novelty or out-of-distribution (OOD) detection with deep learning models.
-                        <br> <br>
-                        Before that, I worked as a Data Science and Technology Consultant at <a href="https://www.westmonroepartners.com/" target="_blank">West Monroe Partners</a>. Here, I led a year-long semantic context extraction data governance project for one of the world's largest banks, among other projects. I also contributed heavily to WMP's internal Machine Learning training program and won their inaugural innvovation challenge for my proposal of a rapid prototyping auto-ML framework.
-                        <br> <br>
-                        My previous research experience is diverse. Some projects include optimizing credit card fraud detection for cost minimization and validating the weak-form efficient market hypothesis with price-movmement classifiers and algorithmic trading. I also worked with the National Institute of Standards and Technology (NIST) as a summer research fellow and developed quantum computing software. Please check out my research section for additional information, or reach out!
+                        I am a Computer Science PhD student in UC Irvine's <a href="https://www.ics.uci.edu/~smyth/research_group.html" target="_blank">DataLab Group</a>. My research explores machine learning robustness in computer vision, natural language, and reinforcement learning applications. In particular, I explore methods of conducting novelty or out-of-distribution (OOD) detection with deep learning models.
                         <br><br>
-                        For fun, I run triathlons and try to explore a new country once a year. 
+                        <strong><font size="+2">Recent News:</font></strong>
+                            <ul>
+                                <li><strong>Sep 2022</strong> - Paper on predictive querying for neural sequence models was 
+                                    <strong>accepted in NeurIPs 2022!</strong> </li>
+                                <li><strong>Apr 2022</strong> - I was awarded the NSF Graduate Research Fellowship!
+                                <li><strong>Nov 2021</strong> - I was awarded the Hasso-Platner Institute (HPI) PhD Fellowship (3 years)
+                                <li><strong>Sep 2020</strong> - I was awarded the UCI ICS Deans Award of $10,000
+                            </ul>
 
                     </p>
                 </div>
@@ -128,6 +132,17 @@
     <div id="experience" class="background-alt">
         <h2 class="heading">Experience</h2>
         <div id="experience-timeline">
+
+            <div data-date="June 2022 – September 2022">
+                <h2><a href="https://www.amazon.science/" target="_blank" ><div class="education-image">
+                    <img src="images/amazon_science.jpeg" width = 450 height = 75/>
+                </div></a></h2>
+                <h3>Amazon Science (Personalization)</h3>
+                <h4>Applied Scientist: Personalization</h4>
+                <p> 
+                    Conducted research to improve Amazon's ability to recommend products that facilitate holistic online engagement (clicks, hearts, time on page, etc.). Formulated task as a multi-task learning problem and implemented+evaluated several SOTA algorithms. Achieved an average relative improvement of over 10% over existing production baselines. Augmented my research code into MultiRec: a configuration-driven machine learning research software package to accelerate research. MultiRec supports PyTorch and sklearn-style models, allowing me to train 1443 models over 74 experiment settings in a single summer.
+                </p>
+            </div>
 
             <div data-date="June 2021 – September 2021">
                 <h2><a href="https://www.sri.com/" target="_blank" ><div class="education-image">
@@ -161,17 +176,6 @@
                 </p>
             </div>
 
-<!--             <div data-date="February 2017 – August 2017">
-                <h2><a href="https://www.westmonroepartners.com" target="_blank" ><div class="education-image">
-                    <img src="images/wmp_all.png" width = 260 height = 60/>
-                </div></a></h2>
-                <h3>West Monroe Partners</h3>
-                <h4>Advanced Analytics Consultant</h4>
-                <p>
-                    Co-op where I worked as a full-stack data engineer for multiple clients. Assisted in developing data warehousing architecture for Chicago Parking Meters. Additionally, I implemented West Monroe's Rapid Analytics Platform (RAP) for a large digital marketing company. This included creating and leveraging RESTful Python APIs, SQL stored procedure scripting, SSIS ETL development, as well as SSRS and PowerBI reporting.
-                </p>
-            </div> -->
-        
             <div data-date="May 2016 – August 2016">
                 <h2><a href="https://www.8451.com" target="_blank" ><div class="education-image">
                     <img src="images/8451.jpeg" width = 200 height = 50/>
@@ -422,6 +426,7 @@
             <li>RLlib</li>
             <li>Ray</li>
             <li>CUDA</li>
+            <li>AWS SageMaker</li>
             <li>OpenAI Gym</li>
         </ul>
     </div>
@@ -431,6 +436,30 @@
         <h2 class="heading">Selected Projects</h2>
         <div class="container">
             <div class="row">
+
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/multirec_m_only.png" width = 300 height = 300/>
+                    </div>
+                    <!-- End .research-image -->
+                    <div class="project-info">
+                        <h3>MultiRec: A Machine Learning Research Package for Recommender Systems</h3>
+                        <p align = 'left'>
+                            MultiRec accelerates machine learning research for recommender systems by procedurally generating experiments with a single configuration file. MultiRec offers CPU and GPU support, data parallelization, automatic preprocessing, and standard+stratified evaluation. It also works natively with local and S3 directories and can deploy its trained models to SageMaker using the bring-your-own-model design pattern.
+                        </p>
+                        <table align = 'center' style="border-collapse: separate; border-spacing: 20px 0;" >
+                          <tr>
+                            <th>Ppt.</th>
+                          </tr>
+                          <tr>
+                            <td><a href="https://docs.google.com/presentation/d/13UdpQdagcTZUTC8rC-FUywYHgWVhyLSLwG36zuFv4WY/edit?usp=sharing" target="_blank"><i class="far fa-file-powerpoint fa-2x" aria-hidden="true"></i></a></td>
+                          </tr>
+                        </table>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
 
                 <div class="project shadow-large">
                     <div class="project-image">
@@ -519,7 +548,7 @@
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
-                        <h3>Web Application for Image Classification in the CalTech256 Image Dataset</h3>
+                        <h3>Web Application for CalTech256 Image Classification</h3>
                         <p align = 'left'>
                             The <a href="http://www.vision.caltech.edu/Image_Datasets/Caltech256/"target="_blank">CalTech 256</a> image dataset was created to assess the performance of different image classification models, particular under different input data size (number of photos) constraints. Using a transfer learning model build on the Xception classifier, myself and small team I led were able to achieve a holistic macro and micro F1 Score of 86% across all classes. We then integrated this model into a frontend Flask web application where a user can upload any photo and see the top 10 class prediction probabilities as well as the overall prediction.
                         </p>
