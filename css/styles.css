@@ -13,7 +13,7 @@
 
 body {
 	font-family: 'Lato', sans-serif;
-	font-size: 16px
+	font-size: 18px
 }
 
 body.active {
@@ -478,7 +478,7 @@ footer {
 
 .vtimeline-content p {
 	color: #74808a;
-	font-size: 0.9em;
+	font-size: 1.0em;
 	margin: 0
 }
 
@@ -616,7 +616,7 @@ footer {
 .education-block ul {
 	margin: 0;
 	color: #74808a;
-	font-size: 0.9em;
+	font-size: 1.0em;
 	float: left;
 	vertical-align: top;
 	margin-bottom: 15px;
@@ -650,7 +650,7 @@ footer {
 
 .project {
 	position: relative;
-	max-width: 900px;
+	max-width: 1300px;
 	margin: 0 auto 30px auto;
 	overflow: hidden;
 	background: #fff;
@@ -665,7 +665,7 @@ footer {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	margin-left: 300px;
+	margin-left: 400px;
 	padding: 15px
 }
 
@@ -679,7 +679,7 @@ footer {
 .project-info p {
 	color: #74808a;
 	margin: 0 0 15px 0;
-	font-size: 0.9em
+	font-size: 1.0em
 }
 
 .no-image .project-info {
@@ -942,12 +942,12 @@ footer {
 		margin: 0
 	}
 	#about {
-		text-align: center
+		text-align: left
 	}
 	#about p {
 		text-align: left
 	}
-}
+
 
 @media only screen and (max-width: 768px) {
 

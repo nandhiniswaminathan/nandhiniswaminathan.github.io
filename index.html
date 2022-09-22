@@ -8,10 +8,10 @@
     <title>Hire Me</title>
 
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet"> 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/6.0.0/css/font-awesome.min.css">
     <link rel="icon" href="images/favicon.png">
     
-    <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/brands.min.css">
+    <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/brands.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <script src="./js/jquery.js"></script>
@@ -21,7 +21,7 @@
     <script src="./js/p5.min.js"></script>
     <script src="./js/gallery.min.js"></script>
     <script src="./js/vanta.birds.min.js"></script>
-    <script src="https://kit.fontawesome.com/893d34278d.js"></script>
+    <script src="https://kit.fontawesome.com/893d34278d.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -116,7 +116,7 @@
                         <strong><font size="+2">Recent News:</font></strong>
                             <ul>
                                 <li><strong>Sep 2022</strong> - Paper on predictive querying for neural sequence models was 
-                                    <strong>accepted in NeurIPs 2022!</strong> </li>
+                                    accepted in NeurIPs 2022! </li>
                                 <li><strong>Apr 2022</strong> - I was awarded the NSF Graduate Research Fellowship!
                                 <li><strong>Nov 2021</strong> - I was awarded the Hasso-Platner Institute (HPI) PhD Fellowship (3 years)
                                 <li><strong>Sep 2020</strong> - I was awarded the UCI ICS Deans Award of $10,000
@@ -236,7 +236,7 @@
                         <h4>Bachelors' of Arts in Mathematics, Economics <br>
                         Minor in Computer Science</h4>
                         <p>
-                            In college I focused on Applied Mathematics and its intersection with Economics and Computer Science. This quickly led me to the growing field of Machine Learning, for which I grew a strong passion. With the help of a few friends, I launched DePauw's Data Science Group (DPUDS) in 2017. Over the two years I served as its President, DPUDS won a Data Science hackathon, completed over a dozen projects, and grew to be one of the largest groups on campus. I graduated in 2018 with degrees in Mathematics and Economics, Summa Cum Laude. 
+                            With the help of a few friends, I launched DePauw's Data Science Group (DPUDS) in 2017. Over the two years I served as President, DPUDS won a Data Science hackathon, completed over a dozen projects, and grew to be one of the largest groups on campus. I also served as President of DePauw's Investment Group. I graduated in 2018 with degrees in Mathematics and Economics, Summa Cum Laude. 
                         </p>
                     </div>
                 </div>
@@ -252,14 +252,44 @@
     <div id="research" class="background-alt">
         <h2 class="heading">Research</h2>
         <div class="container">
-            <div class="row">
+            <div class="row" >
+
+                <div class="project shadow-large" >
+                    <div class="project-image">
+                        <img src="images/query_thumbnail.png" width = 400 height = 400/>
+                    </div>
+                    <!-- End .research-image -->
+                    <div class="project-info">
+                        <h3>Predictive Querying for Neural Sequence Models</h3>
+                        <p align = 'left'><font size="+2"><strong>NeurIPs 2022: &nbsp;&nbsp;&nbsp;&nbsp;</strong></font> Alex Boyd*, <strong>Sam Showalter*</strong>, 
+                            Stephan Mandt, Padhraic Smyth  <br> (* equal contribution)</p>
+                        <p align = 'left'>
+                            In reasoning about sequential events it is natural to pose probabilistic queries such as “when will event A occur next” or “what is the probability of A occurring before B,” with applications in areas such as user modeling, medicine, and finance. However, with machine learning shifting towards neural autoregressive models, probabilistic querying has been largely restricted to simple cases such as next-event prediction. In this paper we introduce a general typology for predictive queries in autoregressive sequence models and show that such queries can be systematically represented by sets of elementary building blocks.
+                        </p>
+                        <table align = 'center' style="border-collapse: separate; border-spacing: 20px 0;" >
+                          <tr>
+                            <th>PDF</th>
+                            <th>Code</th>
+                            <th>Reviews</th>
+                          </tr>
+                          <tr>
+                            <td><a href="docs/showalter_crisis_nlp.pdf" target="_blank"><i class="far fa-file-pdf fa-2x" aria-hidden="true"></i></a></td>
+                            <td><a href="https://github.com/SamShowalter/NLTweetRelief" target="_blank" align = 'right' ><i class="fab fa-github fa-2x" aria-hidden="true"></i></a></td>
+                            <td><a href="docs/showalter_crisis_nlp.pdf" target="_blank"><i class="fas fa-magnifying-glass fa-2x" aria-hidden="true"></i></a></td>
+                          </tr>
+                        </table>
+                    </div>
+                    <!-- End .research-info -->
+                </div>
+                <!-- End .research -->
+
 
 
 
 
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="images/crisis.jpeg" width = 300 height = 300/>
+                        <img src="images/crisis.jpeg" width = 400 height = 400/>
                     </div>
                     <!-- End .research-image -->
                     <div class="project-info">
@@ -271,7 +301,7 @@
                         <table align = 'center' style="border-collapse: separate; border-spacing: 20px 0;" >
                           <tr>
                             <th>Code</th>
-                            <th>Publication</th>
+                            <th>PDF</th>
                           </tr>
                           <tr>
                             <td><a href="https://github.com/SamShowalter/NLTweetRelief" target="_blank" align = 'right' ><i class="fab fa-github fa-2x" aria-hidden="true"></i></a></td>
@@ -285,7 +315,7 @@
 
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="images/Credit-Card-Fraud.jpg" width = 300 height = 300/>
+                        <img src="images/Credit-Card-Fraud.jpg" width = 400 height = 400/>
                     </div>
                     <!-- End .research-image -->
                     <div class="project-info">
@@ -299,7 +329,7 @@
                         <table align = 'center' style="border-collapse: separate; border-spacing: 20px 0;" >
                           <tr>
                             <th>Code</th>
-                            <th>Publication</th>
+                            <th>PDF</th>
                             <th>Ppt.</th>
                             <th>Talk</th>
                           </tr>
@@ -317,7 +347,7 @@
 
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="images/stocks.png" width = 300 height = 300/>
+                        <img src="images/stocks.png" width = 400 height = 400/>
                     </div>
                     <!-- End .research-image -->
                     <div class="project-info">
@@ -328,7 +358,7 @@
                         <table align = 'center' style="border-collapse: separate; border-spacing: 20px 0;" >
                           <tr>
                             <th>Code</th>
-                            <th>Publication</th>
+                            <th>PDF</th>
                           </tr>
                           <tr>
                             <td><a href="https://github.com/SamShowalter/Economics_Thesis_EMH" target="_blank" align = 'right' ><i class="fab fa-github fa-2x" aria-hidden="true"></i></a></td>
@@ -343,7 +373,7 @@
 
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="images/blochsphere.gif" width = 300 height = 300 />
+                        <img src="images/blochsphere.gif" width = 400 height = 400 />
                     </div>
                     <!-- End .research-image -->
                     <div class="project-info">
@@ -374,7 +404,7 @@
                 <div id="more-research" class="row">
                     <div class="project shadow-large">
                         <div class="project-image">
-                            <img src="images/kawaii.jpg" width = 300 height = 300 />
+                            <img src="images/kawaii.jpg" width = 400 height = 400 />
                         </div>
                         <!-- End .research-image -->
                         <div class="project-info">
@@ -388,7 +418,7 @@
                             </p>
                                 <table align = 'center' style="border-collapse: separate; border-spacing: 20px 0;" >
                               <tr>
-                                <th>Publication</th>
+                                <th>PDF</th>
                               </tr>
                               <tr>
 
@@ -440,7 +470,7 @@
 
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="images/multirec_m_only.png" width = 300 height = 300/>
+                        <img src="images/multirec_m_only.png" width = 400 height = 400/>
                     </div>
                     <!-- End .research-image -->
                     <div class="project-info">
@@ -463,7 +493,7 @@
 
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="images/cameleon.png" width = 300 height = 300/>
+                        <img src="images/cameleon.png" width = 400 height = 400/>
                     </div>
                     <!-- End .research-image -->
                     <div class="project-info">
@@ -492,7 +522,7 @@
 
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <div class = "verticalhorizontal"><img class = 'moveimage' src="images/airbender.png" width = 300, height = 250,  border="0"></div>
+                        <div class = "verticalhorizontal"><img class = 'moveimage' src="images/airbender.png" width = 400, height = 350,  border="0"></div>
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
@@ -518,7 +548,7 @@
 
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="images/NEFT_snake.gif" width = 300 height = 300/>
+                        <img src="images/NEFT_snake.gif" width = 400 height = 400/>
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
@@ -544,7 +574,7 @@
 
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="images/caltech256.jpg" width = 300 height = 300/>
+                        <img src="images/caltech256.jpg" width = 400 height = 400/>
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
@@ -579,7 +609,7 @@
 
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="images/MNIST.gif" width = 300 height = 300/>
+                        <img src="images/MNIST.gif" width = 400 height = 400/>
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
@@ -603,7 +633,7 @@
 
                     <div class="project shadow-large">
                         <div class="project-image">
-                            <img src="images/shakespeareAI.jpg" width = 300 height = 300/>
+                            <img src="images/shakespeareAI.jpg" width = 400 height = 400/>
                         </div>
                         <!-- End .project-image -->
                         <div class="project-info">
@@ -626,7 +656,7 @@
 
                     <div class="project shadow-large">
                         <div class="project-image">
-                            <img src="images/dpu_adventure_game.png" width = 300 height = 300/>
+                            <img src="images/dpu_adventure_game.png" width = 400 height = 400/>
                         </div>
                         <!-- End .project-image -->
 
@@ -653,7 +683,7 @@
                 
                     <div class="project shadow-large">
                         <div class="project-image">
-                            <img src="images/sudoku.gif" width = 300 height = 350/>
+                            <img src="images/sudoku.gif" width = 400 height = 425/>
                         </div>
                         <!-- End .project-image -->
                         <div class="project-info">
@@ -677,7 +707,7 @@
                 
                     <div class="project shadow-large">
                         <div class="project-image">
-                            <img src="images/maze.gif" width = 300 height = 300/>
+                            <img src="images/maze.gif" width = 400 height = 400/>
                         </div>
                         <!-- End .project-image -->
                         <div class="project-info">
@@ -740,13 +770,13 @@
             <div class="row">
                 <div class="col-sm-5 copyright">
                     <p>
-                        Copyright &copy; 2020 Samuel Showalter
+                        Copyright &copy; 2022 Samuel Showalter
                     </p>
 
-                    <p>
-                    Visit Count:
-                        <a href="https://www.webfreecounter.com/" target="_blank"><img src="https://www.webfreecounter.com/hit.php?id=gmmfknqf&nd=7&style=1" border="0" alt="counter for blog"></a>
-                    </p>
+                    <!-- <p> -->
+                    <!-- Visit Count: -->
+                    <!--     <a href="https://www.webfreecounter.com/" target="_blank"><img src="https://www.webfreecounter.com/hit.php?id=gmmfknqf&nd=7&style=1" border="0" alt="counter for blog"></a> -->
+                    <!-- </p> -->
                 </div>
                 <div class="col-sm-5 social">
                     <ul>
