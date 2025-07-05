@@ -22,6 +22,137 @@
     <script src="./js/gallery.min.js"></script>
     <script src="./js/vanta.birds.min.js"></script>
     <script src="https://kit.fontawesome.com/893d34278d.js" crossorigin="anonymous"></script>
+        <style>
+        :root {
+            --dark-grey: #333333;
+            --mid-grey: #808080;
+            --light-grey: #f5f5f5;
+            --white: #ffffff;
+            --black: #000000;
+        }
+
+        /* General Body and Text */
+        body, html {
+            background-color: var(--white);
+            color: var(--dark-grey);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--black);
+        }
+
+        h2.heading {
+            color: var(--black);
+        }
+        
+        a {
+            color: var(--dark-grey);
+        }
+        
+        a:hover {
+            color: var(--black);
+        }
+
+        /* Lead Section (Vanta.js background) */
+        #lead h1 {
+            color: var(--black);
+            font-weight: 700;
+        }
+
+        #lead h2 {
+            color: var(--dark-grey);
+        }
+
+        .btn-rounded-white {
+            color: var(--dark-grey);
+            background: var(--white);
+            border: 2px solid var(--mid-grey);
+        }
+
+        .btn-rounded-white:hover {
+            color: var(--white);
+            background: var(--black);
+            border: 2px solid var(--black);
+        }
+        
+        /* Navigation */
+        header, #mobile-menu-close {
+            background: var(--white);
+        }
+
+        #menu li a {
+            color: var(--dark-grey);
+        }
+        
+        #menu li a:hover {
+            color: var(--black);
+            background: var(--light-grey);
+        }
+        
+        /* Alternate Background Sections */
+        .background-alt {
+            background: var(--light-grey);
+        }
+
+        /* Experience Timeline */
+        #experience-timeline::before {
+            background: #e0e0e0; /* A light grey for the line */
+        }
+        
+        #experience-timeline .vtimeline-date {
+            color: var(--mid-grey);
+        }
+
+        [data-date]::before {
+            background: var(--mid-grey);
+        }
+
+        /* Education & Project Blocks */
+        .education-block, .project-info {
+             color: var(--dark-grey);
+        }
+        
+        .shadow-large {
+            background-color: var(--white);
+        }
+        
+        /* Skills Pills */
+        #skills ul li {
+            background: #e0e0e0;
+            color: var(--dark-grey);
+        }
+
+        /* Contact Form */
+        #contact-form input, #contact-form textarea {
+            background: var(--light-grey);
+            border: 1px solid #ccc;
+            color: var(--black);
+        }
+        
+        #contact-form button {
+            background: var(--dark-grey);
+            color: var(--white);
+        }
+        
+        #contact-form button:hover {
+             background: var(--black);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-grey);
+            color: var(--light-grey);
+        }
+        
+        footer .social a {
+            color: var(--white);
+        }
+        
+        footer .social a:hover {
+            color: #cccccc;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -351,6 +482,29 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/scripts.min.js"></script>
     <script src="./js/to.top.js"></script>
+    <script>
+    VANTA.BIRDS({
+      el: "#wm", // The element where the animation will be rendered
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      backgroundColor: 0xf5f5f5, // Light grey background
+      color1: 0x0,          // Black birds
+      color2: 0x808080,      // Grey birds
+      colorMode: "lerpGradient",
+      birdSize: 1.20,
+      wingSpan: 25.00,
+      speedLimit: 4.00,
+      separation: 30.00,
+      alignment: 25.00,
+      cohesion: 25.00,
+      quantity: 4.00
+    })
+    </script>
 </body>
 
 </html>
