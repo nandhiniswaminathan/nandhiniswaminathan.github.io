@@ -1,2 +1,2 @@
-# SamShowalter.github.io
+# nandhiniswaminathan.github.io
 Portfolio
