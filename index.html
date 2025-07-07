@@ -30,6 +30,19 @@
             --white: #ffffff;
             --black: #000000;
         }
+        .profile-image {
+    display: block;                   
+    width: 150px;                    /* Sets the width of the circle */
+    height: 150px;                   /* Sets the height of the circle */
+    margin-left: auto;               /* Centers the image horizontally */
+    margin-right: auto;              /* Centers the image horizontally */
+    margin-bottom: 25px;             /* Adds space between the image and your name */
+    border-radius: 50%; 
+    object-position: 50% 35%;                     
+    object-fit: cover;               
+    border: 4px solid var(--white);  /* Optional: Adds a nice white border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Optional: Adds a subtle shadow */
+}
 
         /* General Body and Text */
         body, html {
@@ -151,6 +164,57 @@
         footer .social a:hover {
             color: #cccccc;
         }
+.writing-card {
+    background: var(--white);
+    border-radius: 4px;
+    overflow: hidden; /* Keeps the image inside the rounded corners */
+    margin-bottom: 30px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    display: flex;
+    flex-direction: column; /* Ensures content below image */
+}
+
+.writing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.writing-card-image img {
+    width: 100%;
+    height: 200px; /* A fixed height for all images */
+    object-fit: cover; /* Prevents images from stretching/squashing */
+}
+
+.writing-card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Makes the content area fill the space */
+}
+
+.writing-card-content h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    flex-grow: 1; /* Pushes the date to the bottom */
+}
+
+.writing-card-content h3 a {
+    text-decoration: none;
+    color: var(--dark-grey);
+}
+
+.writing-card-content p {
+    color: var(--mid-grey);
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.writing-card-date {
+    font-size: 0.8em;
+    color: #aaa;
+    text-align: right;
+}
 
     </style>
 </head>
@@ -167,16 +231,18 @@
         <ul id="menu" class="shadow">
             <li>
                 <a href="#about">About</a>
-            </li>
-            <li>
-                <a href="#experience">Experience</a>
-            </li>
-            <li>
-                <a href="#education">Education</a>
-            </li>
+            </li>  
             <li>
                 <a href="#publications">Publications</a>
             </li>
+            <li>
+            <a href="#awards">Awards</a>
+        </li>
+            
+           <li>
+            <a href="#leadership">Leadership & Service</a>
+        </li>
+        <li>  <a href="#Blog">Writing</a>  </li>
             <li>
                 <a href="#skills">Skills</a>
             </li>
@@ -194,9 +260,15 @@
         <div id="lead">
 
         <div id="lead-content">
+            <img src="images/IMG_6949 (1).jpg" alt="A photo of Nandhini Swaminathan" class="profile-image">
             <h1>Nandhini Swaminathan</h1>
-            <h2>PhD Student | AI Ethics & Governance</h2>
-            <a href="https://docs.google.com/document/d/1CsVsQq24wE0sqjQc2-dPkbd_AbLNijamD8qSf6ZmFGc/edit?usp=sharing" target = "_blank" class="btn-rounded-white">Download Resume</a>
+            <h2> PhD Candidate @ UC San Diego, Halıcıoğlu Data Science Institute </h2>  
+            <h3>MS in Computer Science @ UC San Diego, Computer Science and Engineering</h3>
+            <h3> Bachelors in Instrumentation and Control Engineering @ NIT-Tiruchirapalli <br><br> Minor in Computer Science</h3>
+            <h4>ACM USTPC Council Member</h4>
+            <h4> Sigma Xi</h4>
+            
+            <a href="https://docs.google.com/document/d/1CsVsQq24wE0sqjQc2-dPkbd_AbLNijamD8qSf6ZmFGc/export?format=pdf" target = "_blank" class="btn-rounded-white">Download Resume</a>
         </div>
         <!-- End #lead-content -->
         
@@ -219,16 +291,34 @@
                         
                             <figcaption><h2 class="heading">About Me</h2></figcaption>
                    
-                            <!-- Add your photo here -->
-                            <!-- <img src="path/to/your-photo.jpg" width = 300 height = 280/> -->
-                        
+                           
                     </figure>
                     <br>
-                    <table align = 'center' style="border-collapse: separate; border-spacing: 20px 0;" >
-                          <td><a href="https://github.com/nandhiniswaminathan" target="_blank"><i class="fab fa-github fa-2x" aria-hidden="true"></i></a></td>
-                          <td><a href="https://linkedin.com/in/nandhini-swaminathan" target="_blank"><i class="fab fa-linkedin fa-2x" aria-hidden="true"></i></a></td>
-                          <td><a href="https://nandhiniswaminathan.medium.com/" target="_blank"><i class="fab fa-medium fa-2x" aria-hidden="true"></i></a></td>
-                        </table>
+                    <table align='center' style="border-collapse: separate; border-spacing: 20px 0;">
+    <tr>
+        <td>
+            <a href="https://github.com/nandhiniswaminathan" target="_blank">
+                <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+            </a>
+        </td>
+        <td>
+            <a href="https://linkedin.com/in/nandhini-swaminathan" target="_blank">
+                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+            </a>
+        </td>
+        <td>
+            <a href="https://nandhiniswaminathan.medium.com/" target="_blank">
+                <i class="fab fa-medium fa-2x" aria-hidden="true"></i>
+            </a>
+        </td>
+        <!-- This is the new, corrected Google Scholar icon link -->
+        <td>
+            <a href="https://scholar.google.com/citations?user=yYs2d9EAAAAJ&hl=en" target="_blank">
+                <i class="fa-brands fa-google-scholar fa-2x" aria-hidden="true"></i>
+            </a>
+        </td>
+    </tr>
+</table>
                     
                 </div>
 
@@ -236,15 +326,14 @@
                 <div class="col-md-8">
                     <p>
                         <br><br><br>
-                        I am a PhD student in the Halıcıoğlu Data Science Institute (HDSI) at UC San Diego, advised by Professor David Danks. My research focuses on AI ethics and governance, particularly exploring ethical gaps in distributed AI development and the application of risk management frameworks to emerging technologies.
+                        I am a Ph.D. student in the Halıcıoğlu Data Science Institute  at UC San Diego advised by Dr. David Danks.  
+                My research focuses on the design, development, and governance of AI systems 
+             by advancing techniques for fairness, bias mitigation, and the ethical deployment of machine learning systems.
+<br><br>
+I approach these challenges using tools from game theory, reinforcement learning, and AI safety, with an emphasis on building adaptive, accountable
+ systems that function effectively in dynamic and uncertain environments.
                         <br><br>
-                        <strong><font size="+2">Scholarships & Awards:</font></strong>
-                            <ul>
-                                <li><strong>2024</strong> - Lesbians Who Tech Summit Scholarship</li>
-                                <li><strong>2022</strong> - Runner-up, Infinity Hackathon</li>
-                                <li><strong>2021</strong> - Harvard Project for Asian and International Relations Delegate</li>
-                                <li><strong>2021</strong> - MLH Fellow</li>
-                            </ul>
+                    
 
                     </p>
                 </div>
@@ -252,178 +341,244 @@
         </div>
     </div>
     <!-- End #about -->
-
-    <div id="experience" class="background-alt">
-        <h2 class="heading">Experience</h2>
-        <div id="experience-timeline">
-            
-            <div data-date="August 2021 – September 2022">
-                <h2><a href="https://www.cognizant.com/" target="_blank" >Cognizant</a></h2>
-                <h3>IoT Engineer</h3>
-                <p> 
-                    - Helped with data conversion for a global SAP ERP deployment. <br>
-                    - Defined data transformation rules, created reports, and developed documentation. <br>
-                    - Tracked and troubleshot data loads and validation during the cutover to SAP. <br>
-                    - Collaborated with cross-functional teams to resolve complex data integration challenges.
-                </p>
-            </div>
+   <div id="publications" class="background-alt">
+    <div class="container">
         
-            <div data-date="Present">
-                <h2><a href="https://www.acm.org/public-policy/ustpc" target="_blank" >ACM US Technology Policy Committee (USTPC)</a></h2>
-                <h4>Executive Committee Member</h4>
-                <p> 
-                    Contribute to technology policy discussions and initiatives within the ACM.
-                </p>
-            </div>
-
-
-            <div data-date="Present">
-                 <h2><a href="https://csw.ucsd.edu/" target="_blank" >UCSD</a></h2>
-                <h4>Committee Member, Chancellor's Advisory Committee on the Status of Women (CSW)</h4>
-                <p> 
-                    Advise the Chancellor on issues related to gender equity and the status of women at UC San Diego.
-                </p>
-            </div>
-
-            <div data-date="Past">
-                <h2>Illuminate (NGO)</h2>
-                <h4>Student Volunteer and Teacher</h4>
-                <p> 
-                    Volunteered to teach and support educational programs for an NGO.
-                </p>
-            </div>
+         <div align="center">
+            <h2 class="heading">Selected Publications</h2>
+             
         </div>
-    </div>
-    <!-- End #experience -->
+        <div class="row">
 
-    <div id="education">
-        <h2 class="heading">Education</h2>
-        <div class="container">
-            <div class = "row">
-                <div class = "education-container shadow-large">
-                    <div class="education-image">
-                                <img src="images/ucsd_logo.png" width = 300 height = 300/> <!-- Placeholder Image -->
-                    </div>
-
-                    <div class="education-block">
-                        <h3>University of California, San Diego</h3>
-                        <span class="education-date">Fall 2025 - Present</span>
-                        <h4>Ph.D. in HDSI<br></h4>
-                        <p>
-                            Advisor: Prof. David Danks
-                        </p>
-                    </div>
+            <!-- Publication 1 -->
+            <div class="project shadow-large no-image">
+                <div class="project-info">
+                    <h3>
+                        <a href="https://link.springer.com/article/10.1007/s44206-024-00088-0" target="_blank">Governing ethical gaps in distributed AI development</a>
+                    </h3>
+                    <p align='left'><strong>Nandhini Swaminathan</strong>, David Danks. <br> <i>Digital Society, 3(1), 7.</i></p>
                 </div>
-                <!-- End .education-block -->
-
-
-                <div class="education-container shadow-large">
-                    <div class="education-image">
-                            <img src="images/ucsd_logo.png" width = 300 height = 300/> <!-- Placeholder Image -->
-                    </div>
-
-                    <div class ="education-block">
-                        <h3>University of California, San Diego</h3>
-                        <span class="education-date">Fall 2022 - Spring 2024</span>
-                        <h4>Master's in Computer Science<br></h4>
-                         <p>
-                            Advisor: Prof. David Danks
-                        </p>
-                    </div>
-                </div>
-
-                <div class="education-container shadow-large">
-                    <div class="education-image">
-                            <img src="images/nit_trichy_logo.png" width = 300 height = 300/> <!-- Placeholder Image -->
-                    </div>
-
-                    <div class ="education-block">
-                        <h3>National Institute of Technology, Trichy</h3>
-                        <span class="education-date">Fall 2017 - Spring 2021</span>
-                        <h4>Bachelor's in Instrumentation and Control Engineering<br>
-                        Minor in Computer Science</h4>
-                    </div>
-                </div>
-        <!-- End .education-block -->
             </div>
-        </div>
-        
-    </div>
-    <!-- End #education -->
 
-
-    <div id="publications" class="background-alt">
-        <h2 class="heading">Selected Publications</h2>
-        <div class="container">
-             <div align="center">
-                 <a href="https://scholar.google.com/citations?user=your_scholar_id" target="_blank" class="btn-rounded-white">View on Google Scholar</a>
-                 <br><br><br>
+            <!-- Publication 2 -->
+            <div class="project shadow-large no-image">
+                <div class="project-info">
+                    <h3>
+                        <a href="https://arxiv.org/abs/2404.19256" target="_blank">AI, pluralism, and (social) compensation</a>
+                    </h3>
+                    <p align='left'><strong>Nandhini Swaminathan</strong>, David Danks. <br> <i>Pluralistic Alignment Workshop at NeurIPS.</i></p>
+                </div>
             </div>
-            <div class="row" >
 
-                <div class="project shadow-large" >
-                    <div class="project-info">
-                        <h3>Governing ethical gaps in distributed AI development</h3>
-                        <p align = 'left'><strong>Nandhini Swaminathan</strong>, David Danks. <br> <i>Digital Society, 3(1), 7.</i></p>
-                        <table align = 'center' style="border-collapse: separate; border-spacing: 20px 0;" >
-                          <tr>
-                            <th>Paper</th>
-                          </tr>
-                          <tr>
-                            <td><a href="https://link.springer.com/article/10.1007/s44206-024-00096-7" target="_blank"><i class="far fa-file-pdf fa-2x" aria-hidden="true"></i></a></td>
-                          </tr>
-                        </table>
-                    </div>
+            <!-- Publication 3 -->
+            <div class="project shadow-large no-image">
+                <div class="project-info">
+                    <h3>
+                        <a href="https://arxiv.org/abs/2403.15646" target="_blank">Application of the NIST AI Risk Management Framework to surveillance technology</a>
+                    </h3>
+                    <p align='left'><strong>Nandhini Swaminathan</strong>, David Danks. <br> <i>arXiv preprint.</i></p>
                 </div>
-
-                <div class="project shadow-large" >
-                    <div class="project-info">
-                        <h3>AI, pluralism, and (social) compensation</h3>
-                        <p align = 'left'><strong>Nandhini Swaminathan</strong>, David Danks. <br> <i>Pluralistic Alignment Workshop at NeurIPS.</i></p>
-                        <table align = 'center' style="border-collapse: separate; border-spacing: 20px 0;" >
-                           <tr>
-                            <th>Paper</th>
-                          </tr>
-                          <tr>
-                            <td><a href="https://pluralisticalignment.org/papers/3.pdf" target="_blank"><i class="far fa-file-pdf fa-2x" aria-hidden="true"></i></a></td>
-                          </tr>
-                        </table>
-                    </div>
+            </div>
+           <!-- Publication 4 -->
+            <div class="project shadow-large no-image">
+                <div class="project-info">
+                    <h3>
+                        <a href="https://ieeexplore.ieee.org/abstract/document/10821054" target="_blank">Identification and Mitigating Bias in Quantum Machine Learning</a>
+                    </h3>
+                    <p align='left'><strong>Nandhini Swaminathan</strong>, David Danks. <br> <i>IEEE International Conference on Quantum Computing and Engineering (QCE)</i></p>
                 </div>
-
-                <div class="project shadow-large">
-                    <div class="project-info">
-                        <h3>Application of the NIST AI Risk Management Framework to surveillance technology</h3>
-                        <p align = 'left'><strong>Nandhini Swaminathan</strong>, David Danks. <br> <i>arXiv preprint.</i></p>
-                        <table align = 'center' style="border-collapse: separate; border-spacing: 20px 0;" >
-                          <tr>
-                            <th>Paper</th>
-                          </tr>
-                          <tr>
-                            <td><a href="https://arxiv.org/abs/2309.11719" target="_blank"><i class="far fa-file-pdf fa-2x" aria-hidden="true"></i></a></td>
-                          </tr>
-                        </table>
-                    </div>
-                </div>
-               
-                <div class="project shadow-large">
-                    <div class="project-info">
-                        <h3>Transfer: Deep inductive network for facial emotion recognition</h3>
-                        <p align = 'left'>Arpita Gupta, <strong>Nandhini Swaminathan</strong>, Ramadoss Balakrishnan. <br> <i>Journal of Mechanics of Continua and Mathematical Sciences, 15(7), 352.</i></p>
-                        <table align = 'center' style="border-collapse: separate; border-spacing: 20px 0;" >
-                           <tr>
-                            <th>Paper</th>
-                          </tr>
-                          <tr>
-                            <td><a href="https://www.ijmcm.com/volume-15-issue-7-2020-paper-352-364.html" target="_blank"><i class="far fa-file-pdf fa-2x" aria-hidden="true"></i></a></td>
-                          </tr>
-                        </table>
-                    </div>
+            </div>
+            <!-- Publication 5 -->
+            <div class="project shadow-large no-image">
+                <div class="project-info">
+                    <h3>
+                        <a href="https://www.researchgate.net/profile/Nandhini-Swaminathan-2/publication/343353686_TRANSFER-_DEEP_INDUCTIVE_NETWORK_FOR_FACIAL_EMOTION_RECOGNITION/links/5f2bd95ba6fdcccc43ac92e3/TRANSFER-DEEP-INDUCTIVE-NETWORK-FOR-FACIAL-EMOTION-RECOGNITION.pdf" target="_blank">Transfer: Deep inductive network for facial emotion recognition</a>
+                    </h3>
+                    <p align='left'>Arpita Gupta, <strong>Nandhini Swaminathan</strong>, Ramadakrishnan Balakrishnan. <br> <i>Journal of Mechanics of Continua and Mathematical Sciences, 15(7), 352.</i></p>
                 </div>
             </div>
         </div>
     </div>
+</div>
     <!-- End #publications -->
+     <div id="awards" class="background-alt">
+         <div align="center">
+            <h2 class="heading">Awards & Honours</h2>
+             
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <!-- Using col-md-offset-2 to center the list and prevent it from looking too wide -->
+                <div class="col-md-8 col-md-offset-2">
+                    <ul class="awards-list">
+                        <li><strong>2024</strong> - Lesbians Who Tech Summit Scholarship</li>
+                        <li><strong>2022</strong> - Runner-up, Infinity Hackathon</li>
+                        <li><strong>2021</strong> - Harvard Project for Asian and International Relations Delegate</li>
+                        <li><strong>2021</strong> - MLH Fellow</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End #awards -->
+<div id="leadership" class="optional-section">
+    <div class="container">
+        <h2 class="heading">Leadership and Service</h2>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+
+                <!-- Block for ACM -->
+                <div class="optional-section-block shadow-large">
+                    <h3>
+                        <a href="https://www.acm.org/public-policy/ustpc" target="_blank">ACM US Technology Policy Committee (USTPC)</a>
+                    </h3>
+                    <h4>Executive Committee Member</h4>
+                    <p>
+                        Contribute to technology policy discussions and initiatives within the ACM.
+                    </p>
+                </div>
+                <!-- End .optional-section-block -->
+
+                <!-- Block for UCSD -->
+                <div class="optional-section-block shadow-large">
+                    <h3>
+                        <a href="https://csw.ucsd.edu/" target="_blank">Chancellor's Advisory Committee on the Status of Women (CSW), UCSD</a>
+                    </h3>
+                    <h4>Committee Member </h4>
+                    <p>
+                        Advise the Chancellor on issues related to gender equity and the status of women at UC San Diego.
+                    </p>
+                </div>
+                <!-- End .optional-section-block -->
+
+                <!-- Block for Illuminate -->
+                <div class="optional-section-block shadow-large">
+                    <h3>Illuminate (NGO)</h3>
+                    <h4>Student Volunteer and Teacher</h4>
+                    <p>
+                        Volunteered to teach and support educational programs for an NGO.
+                    </p>
+                </div>
+                <!-- End .optional-section-block -->
+
+            </div>
+        </div>
+        <!-- End .row -->
+    </div>
+</div>
+<!-- End #leadership -->
+<div id="writing" class="background-alt">
+    <div class="container">
+        <h2 class="heading">Writing</h2>
+        <div class="row">
+
+            <!-- Article 1: Neuro-Symbolic AI -->
+            <div class="col-md-4 col-sm-6">
+                <!-- IMPORTANT: Replace the href with your article link and the src with your image path -->
+                <a href="https://nandhiniswaminathan.medium.com/neuro-symbolic-ai-2fc77b544126" target="_blank" class="writing-card-link">
+                    <div class="writing-card">
+                        <div class="writing-card-image">
+                            <img src="images/neuro-symbolic.jpg" alt="Neuro-Symbolic AI article image"/>
+                        </div>
+                        <div class="writing-card-content">
+                            <h3>“Neuro-Symbolic” AI</h3>
+                            <p>Where deep learning meets traditional rule-based coding.</p>
+                            <span class="writing-card-date">Mar 23, 2022</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Article 2: Fifth Dimension -->
+            <div class="col-md-4 col-sm-6">
+                <!-- IMPORTANT: Replace the href with your article link and the src with your image path -->
+                <a href="https://nandhiniswaminathan.medium.com/how-gravity-could-unravel-the-mysteries-of-the-fifth-dimension-823165bdd03d" target="_blank" class="writing-card-link">
+                    <div class="writing-card">
+                        <div class="writing-card-image">
+                            <img src="images/fifth-dimension.jpg" alt="Fifth Dimension article image"/>
+                        </div>
+                        <div class="writing-card-content">
+                            <h3>How Gravity Could Unravel the Mysteries of the Fifth Dimension</h3>
+                            <p>And how the Large Hadron Collider is helping solve it.</p>
+                            <span class="writing-card-date">Jan 30, 2024</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Article 3: Book Review -->
+            <div class="col-md-4 col-sm-6">
+                <!-- IMPORTANT: Replace the href with your article link and the src with your image path -->
+                <a href="https://nandhiniswaminathan.medium.com/book-review-the-big-nine-by-amy-webb-ec1a2e861371" target="_blank" class="writing-card-link">
+                    <div class="writing-card">
+                        <div class="writing-card-image">
+                            <img src="images/big-nine.jpg" alt="The Big Nine book review image"/>
+                        </div>
+                        <div class="writing-card-content">
+                            <h3>Book Review: The Big Nine by Amy Webb</h3>
+                            <p>Bridging Fiction, Mystery, and Technology: A Dive into The Big Nine.</p>
+                            <span class="writing-card-date">Sep 3, 2023</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Article 4: Image Refinement -->
+            <div class="col-md-4 col-sm-6">
+                <a href="https://medium.com/the-research-nest/image-refinement-essentials-1c838554089c?source=user_profile_page---------3-------------39ecfbbc2475----------------------" target="_blank" class="writing-card-link">
+                    <div class="writing-card">
+                        <div class="writing-card-image">
+                            <img src="images/image-refinement.jpg" alt="Image Refinement article image"/>
+                        </div>
+                        <div class="writing-card-content">
+                            <h3>Image Refinement Essentials</h3>
+                            <p>Navigating Bayesian Techniques, Markov Random Fields, and Gibbs Sampling.</p>
+                            <span class="writing-card-date">Jul 29, 2023</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Article 5: VR Headsets -->
+            <div class="col-md-4 col-sm-6">
+                <!-- IMPORTANT: Replace the href with your article link and the src with your image path -->
+                <a href="https://nandhiniswaminathan.medium.com/meta-quest-3-vs-vision-pro-fb9e3a7cbb4" target="_blank" class="writing-card-link">
+                    <div class="writing-card">
+                        <div class="writing-card-image">
+                            <img src="images/vr-headsets.jpg" alt="VR Headsets article image"/>
+                        </div>
+                        <div class="writing-card-content">
+                            <h3>Meta Quest 3 vs. Vision Pro</h3>
+                            <p>A Comprehensive Comparison Of VR Headsets.</p>
+                            <span class="writing-card-date">Jun 23, 2023</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Article 6: Docker Container -->
+            <div class="col-md-4 col-sm-6">
+                 <a href="https://nandhiniswaminathan.medium.com/build-a-docker-container-for-your-python-application-in-5-minutes-ceb8e527e8f1" target="_blank" class="writing-card-link">
+                    <div class="writing-card">
+                        <div class="writing-card-image">
+                            <img src="images/docker.jpg" alt="Docker article image"/>
+                        </div>
+                        <div class="writing-card-content">
+                            <h3>Build A Docker Container For Your Python Application In 5 Minutes</h3>
+                            <p>Containerization using Docker and an intro to Kubernetes.</p>
+                            <span class="writing-card-date">Jun 19, 2023</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- End #writing -->
+
 
     <div id="skills">
         <h2 class="heading">Skills</h2>
@@ -438,17 +593,21 @@
         </ul>
     </div>
     <!-- End #skills -->
+<div id="contact">
+    <h2>Get in Touch</h2>
+    
+    <!-- A friendly message to the visitor -->
+    <p style="color: #0; max-width: 550px; margin: 0 auto 25px auto;">
+        I'm always open to discussing research, collaboration, or new opportunities. The best way to reach me is by email.
+    </p>
 
-    <div id="contact">
-        <h2>Get in Touch</h2>
-        <div id="contact-form">
-            <form method="POST" action="https://formspree.io/f/nswaminathan@ucsd.edu">
-                <input type="hidden" name="_subject" value="Contact request from personal website" />
-                <input type="email" name="_replyto" placeholder="Your email" required>
-                <textarea name="message" placeholder="Your message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </div>
+    <!-- The new email button -->
+    <div id="contact-email">
+        <a href="mailto:nswaminathan@ucsd.edu" class="btn-rounded-white">Email Me</a>
+    </div>
+
+</div>
+    
         <!-- End #contact-form -->
     </div>
     <!-- End #contact -->
@@ -458,7 +617,7 @@
             <div class="row">
                 <div class="col-sm-5 copyright">
                     <p>
-                        Copyright © 2024 Nandhini Swaminathan
+                        Copyright © 2024 Sam Showalter
                     </p>
                 </div>
                 <div class="col-sm-5 social">
