@@ -18,6 +18,7 @@
       --subtle: #5a5858;
       --rule:   #d5d0c8;
       --mono:   'IBM Plex Mono', 'Fira Mono', monospace;
+      --accent: #1e3a6e;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
@@ -73,7 +74,7 @@
       text-decoration: none;
     }
 
-    nav a:hover { color: var(--text); }
+    nav a:hover { color: var(--accent); }
 
     /* === Hero === */
     #hero {
@@ -116,8 +117,8 @@
     }
 
     .hero-links a:hover {
-      color: var(--text);
-      text-decoration-color: var(--subtle);
+      color: var(--accent);
+      text-decoration-color: var(--accent);
     }
 
     /* === Main content column === */
@@ -172,11 +173,13 @@
 
     .social-row a {
       color: var(--subtle);
-      text-decoration: none;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: var(--rule);
       margin-right: 1.1rem;
     }
 
-    .social-row a:hover { color: var(--text); }
+    .social-row a:hover { color: var(--accent); text-decoration-color: var(--accent); }
 
     /* === Publications === */
     .pub-list {
@@ -289,7 +292,7 @@
   <nav>
     <a href="#about">about</a>
     <a href="#publications">publications</a>
-    <a href="#awards">awards</a>
+    <a href="#awards">honors</a>
     <a href="#leadership">service</a>
     <a href="#writing">writing</a>
     <a href="#contact">contact</a>
@@ -377,7 +380,7 @@
 
     <!-- Awards -->
     <section id="awards">
-      <h2>Scholarships & Awards</h2>
+      <h2>Honors & Recognition</h2>
       <ul class="item-list">
         <li>
           <div class="item-name">CNTR and Watson Tech &amp; Policy Summer School</div>
@@ -387,6 +390,7 @@
         <li>
           <div class="item-name">WiML Scholarship</div>
           <div class="item-meta">Women in Machine Learning — 2025</div>
+          <div class="item-desc">Competitive travel scholarship to attend the Women in Machine Learning Workshop at NeurIPS.</div>
         </li>
         <li>
           <div class="item-name">LWT Summit Scholarship</div>
@@ -406,6 +410,7 @@
         <li>
           <div class="item-name">MLH Fellow</div>
           <div class="item-meta">Meta / Major League Hacking — June–August 2021</div>
+          <div class="item-desc">Competitive fellowship for open source software development, selected from a global applicant pool to contribute to Meta-supported open source projects.</div>
         </li>
       </ul>
     </section>
@@ -420,12 +425,12 @@
           <div class="item-desc">Contributes to technology policy discussions and initiatives within the ACM.</div>
         </li>
         <li>
-          <div class="item-name"><a href="https://csw.ucsd.edu/" target="_blank">Chancellor's Advisory Committee on the Status of Women, UC San Diego</a></div>
+          <div class="item-name"><a href="https://statusofwomen.ucsd.edu/" target="_blank">Chancellor's Advisory Committee on the Status of Women, UC San Diego</a></div>
           <div class="item-meta">Committee Member, 2023–2025</div>
           <div class="item-desc">Advises the Chancellor on gender equity and the status of women at UC San Diego.</div>
         </li>
         <li>
-          <div class="item-name"><a href="https://cse.ucsd.edu/about/diversity" target="_blank">DEI Committee, UCSD CSE</a></div>
+          <div class="item-name"><a href="https://cse.ucsd.edu/diversity_equity_inclusion" target="_blank">DEI Committee, UCSD CSE</a></div>
           <div class="item-meta">Committee Member, 2023–2024</div>
           <div class="item-desc">Contributed to DEI initiatives in Computer Science and Engineering; represented the department at external conferences and supported underrepresented groups in computing.</div>
         </li>
@@ -488,7 +493,7 @@
     <!-- Contact -->
     <section id="contact">
       <h2>Contact</h2>
-      <p>I'm always open to discussing research, collaboration, or new opportunities. The best way to reach me is <a href="mailto:nswaminathan@ucsd.edu">by email</a>.</p>
+      <p>I'm always open to discussing research, collaboration, or new opportunities. The best way to reach me is by <a href="mailto:nswaminathan@ucsd.edu">email</a>.</p>
     </section>
 
   </main>
