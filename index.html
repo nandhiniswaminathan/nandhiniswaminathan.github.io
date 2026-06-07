@@ -1,702 +1,485 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nandhini Swaminathan</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nandhini Swaminathan</title>
+  <link rel="icon" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet"> 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/6.0.0/css/font-awesome.min.css">
-    <link rel="icon" href="images/favicon.png">
-    
-    <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/brands.min.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-    <script src="./js/jquery.js"></script>
-    <script src="./js/three.r92.min.js"></script>
-    <script src="./js/dat.gui.min.js"></script>
-    <script src="./js/rison.js"></script>
-    <script src="./js/p5.min.js"></script>
-    <script src="./js/gallery.min.js"></script>
-    <script src="./js/vanta.birds.min.js"></script>
-    <script src="https://kit.fontawesome.com/893d34278d.js" crossorigin="anonymous"></script>
-        <style>
-        :root {
-            --dark-grey: #333333;
-            --mid-grey: #808080;
-            --light-grey: #f5f5f5;
-            --white: #ffffff;
-            --black: #000000;
-        }
-        .profile-image {
-    display: block;                   
-    width: 150px;                    /* Sets the width of the circle */
-    height: 150px;                   /* Sets the height of the circle */
-    margin-left: auto;               /* Centers the image horizontally */
-    margin-right: auto;              /* Centers the image horizontally */
-    margin-bottom: 25px;             /* Adds space between the image and your name */
-    border-radius: 50%; 
-    object-position: 50% 35%;                     
-    object-fit: cover;               
-    border: 4px solid var(--white);  /* Optional: Adds a nice white border */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Optional: Adds a subtle shadow */
-}
+  <style>
+    /* === Variables === */
+    :root {
+      --bg:     #f7f7f8;
+      --text:   #1c1c1c;
+      --subtle: #5a5858;
+      --rule:   #d5d0c8;
+      --mono:   'IBM Plex Mono', 'Fira Mono', monospace;
+    }
 
-        /* General Body and Text */
-        body, html {
-            background-color: var(--white);
-            color: var(--dark-grey);
-        }
+    *, *::before, *::after { box-sizing: border-box; }
 
-        h1, h2, h3, h4, h5, h6 {
-            color: var(--black);
-        }
+    html {
+      font-size: 18px;
+      scroll-behavior: smooth;
+    }
 
-        h2.heading {
-            color: var(--black);
-        }
-        
-        a {
-            color: var(--dark-grey);
-        }
-        
-        a:hover {
-            color: var(--black);
-        }
+    body {
+      font-family: 'Crimson Pro', Georgia, 'Times New Roman', serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      margin: 0;
+    }
 
-        /* Lead Section (Vanta.js background) */
-        /* === THIS IS THE NEWLY ADDED CODE === */
-        #lead {
-            padding-top: 50px; /* Creates space below the top navigation bar. Adjust value as needed. */
-        }
-        /* === END OF NEW CODE === */
-        
-        #lead h1 {
-            color: var(--black);
-            font-weight: 700;
-        }
+    a {
+      color: var(--text);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: var(--rule);
+    }
 
-        #lead h2 {
-            color: var(--dark-grey);
-        }
+    a:hover {
+      color: #000;
+      text-decoration-color: var(--text);
+    }
 
-        .btn-rounded-white {
-            color: var(--dark-grey);
-            background: var(--white);
-            border: 2px solid var(--mid-grey);
-        }
+    p { margin: 0 0 1rem; }
+    p:last-child { margin-bottom: 0; }
+    strong { font-weight: 600; }
 
-        .btn-rounded-white:hover {
-            color: var(--white);
-            background: var(--black);
-            border: 2px solid var(--black);
-        }
-        
-        /* Navigation */
-        header, #mobile-menu-close {
-            background: var(--white);
-        }
+    /* === Navigation === */
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--rule);
+      text-align: center;
+      padding: 0.7rem 1rem;
+      z-index: 100;
+    }
 
-        #menu li a {
-            color: var(--dark-grey);
-        }
-        
-        #menu li a:hover {
-            color: var(--black);
-            background: var(--light-grey);
-        }
-        
-        /* Alternate Background Sections */
-        .background-alt {
-            background: var(--light-grey);
-        }
+    nav a {
+      display: inline-block;
+      margin: 0 0.85rem;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.02em;
+      text-transform: lowercase;
+      color: var(--subtle);
+      text-decoration: none;
+    }
 
-        /* Experience Timeline */
-        #experience-timeline::before {
-            background: #e0e0e0; /* A light grey for the line */
-        }
-        
-        #experience-timeline .vtimeline-date {
-            color: var(--mid-grey);
-        }
+    nav a:hover { color: var(--text); }
 
-        [data-date]::before {
-            background: var(--mid-grey);
-        }
+    /* === Hero === */
+    #hero {
+      min-height: 35vh;
+      display: flex;
+      align-items: center;
+      padding: 3rem 0;
+    }
 
-        /* Education & Project Blocks */
-        .education-block, .project-info {
-             color: var(--dark-grey);
-        }
-        
-        .shadow-large {
-            background-color: var(--white);
-        }
-        
-        /* Skills Pills */
-        #skills ul li {
-            background: #e0e0e0;
-            color: var(--dark-grey);
-        }
+    #hero > div {
+      max-width: 680px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
 
-        /* Contact Form */
-        #contact-form input, #contact-form textarea {
-            background: var(--light-grey);
-            border: 1px solid #ccc;
-            color: var(--black);
-        }
-        
-        #contact-form button {
-            background: var(--dark-grey);
-            color: var(--white);
-        }
-        
-        #contact-form button:hover {
-             background: var(--black);
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--dark-grey);
-            color: var(--light-grey);
-        }
-        
-        footer .social a {
-            color: var(--white);
-        }
-        
-        footer .social a:hover {
-            color: #cccccc;
-        }
-.writing-card {
-    background: var(--white);
-    border-radius: 4px;
-    overflow: hidden; /* Keeps the image inside the rounded corners */
-    margin-bottom: 30px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    display: flex;
-    flex-direction: column; /* Ensures content below image */
-}
+    #hero h1 {
+      font-size: 2.4rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin: 0 0 0.5rem;
+      color: var(--text);
+    }
 
-.writing-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-}
+    .hero-role {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.8rem;
+      color: var(--subtle);
+      margin: 0 0 1.5rem;
+      letter-spacing: 0.01em;
+    }
 
-.writing-card-image img {
-    width: 100%;
-    height: 200px; /* A fixed height for all images */
-    object-fit: cover; /* Prevents images from stretching/squashing */
-}
+    .hero-links a {
+      color: var(--subtle);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--rule);
+      margin: 0 0.55rem;
+      font-size: 0.95rem;
+    }
 
-.writing-card-content {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* Makes the content area fill the space */
-}
+    .hero-links a:hover {
+      color: var(--text);
+      text-decoration-color: var(--subtle);
+    }
 
-.writing-card-content h3 {
-    margin-top: 0;
-    font-size: 1.2em;
-    flex-grow: 1; /* Pushes the date to the bottom */
-}
+    /* === Main content column === */
+    main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 5rem;
+    }
 
-.writing-card-content h3 a {
-    text-decoration: none;
-    color: var(--dark-grey);
-}
+    /* === Section headings === */
+    section {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--rule);
+    }
 
-.writing-card-content p {
-    color: var(--mid-grey);
-    font-size: 0.9em;
-    margin-bottom: 15px;
-}
+    section:first-child {
+      border-top: none;
+      margin-top: 2rem;
+    }
 
-.writing-card-date {
-    font-size: 0.8em;
-    color: #aaa;
-    text-align: right;
-}
+    h2 {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--subtle);
+      margin: 0 0 1.5rem;
+    }
 
-    </style>
+    /* === About === */
+    .about-inner {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .headshot {
+      width: 105px;
+      height: 105px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: 50% 35%;
+      flex-shrink: 0;
+    }
+
+    .social-row {
+      margin-top: 0.75rem;
+      font-size: 0.88rem;
+    }
+
+    .social-row a {
+      color: var(--subtle);
+      text-decoration: none;
+      margin-right: 1.1rem;
+    }
+
+    .social-row a:hover { color: var(--text); }
+
+    /* === Publications === */
+    .pub-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .pub-list li {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--rule);
+      line-height: 1.55;
+    }
+
+    .pub-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    .pub-title a { font-weight: 500; }
+    .pub-venue { font-style: italic; }
+
+    /* === Awards & Service === */
+    .item-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .item-list li {
+      margin-bottom: 1.25rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .item-list li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .item-name { font-weight: 500; }
+    .item-meta { font-family: var(--mono); color: var(--subtle); font-size: 0.75em; margin-top: 0.2rem; }
+    .item-desc { margin-top: 0.3rem; color: var(--subtle); font-size: 0.95em; }
+
+    /* === Writing === */
+    .writing-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .writing-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.9rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .writing-list li:last-child { border-bottom: none; }
+
+    .writing-info { flex: 1; }
+
+    .writing-date {
+      font-family: var(--mono);
+      color: var(--subtle);
+      font-size: 0.72em;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* === Footer === */
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.82rem;
+      color: var(--subtle);
+      border-top: 1px solid var(--rule);
+    }
+
+    footer a {
+      color: var(--subtle);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--text); }
+
+    footer .footer-social { margin-top: 0.4rem; }
+    footer .footer-social a { margin: 0 0.4rem; }
+
+    /* === Responsive === */
+    @media (max-width: 600px) {
+      html { font-size: 17px; }
+      nav a { margin: 0 0.4rem; font-size: 0.74rem; }
+      #hero h1 { font-size: 1.9rem; }
+      .about-inner { flex-direction: column; align-items: center; text-align: center; }
+      .social-row { text-align: center; }
+      .writing-list li { flex-direction: column; gap: 0.15rem; }
+    }
+  </style>
 </head>
 
 <body>
-    <div id="mobile-menu-open" class="shadow-large">
-        <i class="fa fa-bars" aria-hidden="true"></i>
+
+  <nav>
+    <a href="#about">about</a>
+    <a href="#publications">publications</a>
+    <a href="#awards">awards</a>
+    <a href="#leadership">service</a>
+    <a href="#writing">writing</a>
+    <a href="#contact">contact</a>
+  </nav>
+
+  <div id="hero">
+    <div>
+      <h1>Nandhini Swaminathan</h1>
+      <p class="hero-role">Ph.D. Candidate &middot; Halıcıoğlu Data Science Institute, UC San Diego</p>
+      <p class="hero-links">
+        <a href="https://docs.google.com/document/d/1CsVsQq24wE0sqjQc2-dPkbd_AbLNijamD8qSf6ZmFGc/export?format=pdf" target="_blank">Curriculum Vitae</a>
+        &middot;
+        <a href="mailto:nswaminathan@ucsd.edu">nswaminathan@ucsd.edu</a>
+        &middot;
+        <a href="https://scholar.google.com/citations?user=yYs2d9EAAAAJ&hl=en" target="_blank">Google Scholar</a>
+      </p>
     </div>
-    <!-- End #mobile-menu-toggle -->
-    <header>
-        <div id="mobile-menu-close">
-            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+  </div>
+
+  <main>
+
+    <!-- About -->
+    <section id="about">
+      <h2>About</h2>
+      <div class="about-inner">
+        <img src="images/headshot.jpeg" alt="Nandhini Swaminathan" class="headshot">
+        <div class="about-text">
+          <p>I am a Ph.D. student in the Halıcıoğlu Data Science Institute at UC San Diego, advised by Dr. David Danks. My research focuses on the design, development, and governance of AI systems—advancing techniques for fairness, bias mitigation, and the ethical deployment of machine learning.</p>
+          <p>I approach these challenges using tools from game theory, reinforcement learning, and AI safety, with an emphasis on building adaptive, accountable systems that function effectively in dynamic and uncertain environments.</p>
+<div class="social-row">
+            <a href="https://github.com/nandhiniswaminathan" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/nandhini-swaminathan" target="_blank">LinkedIn</a>
+            <a href="https://nandhiniswaminathan.medium.com/" target="_blank">Medium</a>
+          </div>
         </div>
-        <ul id="menu" class="shadow">
-            <li>
-                <a href="#about">About</a>
-            </li>  
-            <li>
-                <a href="#publications">Publications</a>
-            </li>
-            <li>
-            <a href="#awards">Awards</a>
-        </li>
-            
-           <li>
-            <a href="#leadership">Leadership & Service</a>
-        </li>
-        <li>  <a href="#Blog">Writing</a>  </li>
-            
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-        </ul>
-    </header>
-    <!-- End header -->
-
-    <!-- Add button -->
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-
-    <section id = "wm">
-        <div id="lead">
-
-        <div id="lead-content">
-            <img src="images/headshot.jpeg" alt="A photo of Nandhini Swaminathan" class="profile-image">
-            <h2>Nandhini Swaminathan</h2>
-            <h4> Ph.D. Candidate @ UC San Diego, Halıcıoğlu Data Science Institute </h4>
-            <h6><p style="color: #FF0000;">Website in progress!</p></h6>
-            
-            <a href="https://docs.google.com/document/d/1CsVsQq24wE0sqjQc2-dPkbd_AbLNijamD8qSf6ZmFGc/export?format=pdf" target = "_blank" class="btn-rounded-white">Download Resume</a>
-        </div>
-        <!-- End #lead-content -->
-        
-        
-    </div>
-
+      </div>
     </section>
 
-    <div class="top-left">
-              <span id="fps"></span>
-    </div>
-    
-    <!-- End #lead -->
+    <!-- Publications -->
+    <section id="publications">
+      <h2>Selected Publications</h2>
+      <ul class="pub-list">
+        <li>
+          <div class="pub-title"><a href="https://link.springer.com/article/10.1007/s44206-024-00088-0" target="_blank">Governing ethical gaps in distributed AI development</a></div>
+          <strong>Nandhini Swaminathan</strong>, David Danks.<br>
+          <span class="pub-venue">Digital Society</span>, 3(1), 7. 2024.
+        </li>
+        <li>
+          <div class="pub-title"><a href="https://arxiv.org/abs/2404.19256" target="_blank">AI, pluralism, and (social) compensation</a></div>
+          <strong>Nandhini Swaminathan</strong>, David Danks.<br>
+          <span class="pub-venue">Pluralistic Alignment Workshop at NeurIPS.</span>
+        </li>
+        <li>
+          <div class="pub-title"><a href="https://arxiv.org/abs/2403.15646" target="_blank">Application of the NIST AI Risk Management Framework to surveillance technology</a></div>
+          <strong>Nandhini Swaminathan</strong>, David Danks.<br>
+          <span class="pub-venue">arXiv preprint.</span> 2024.
+        </li>
+        <li>
+          <div class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/10821054" target="_blank">Identifying and Mitigating Bias in Quantum Machine Learning</a></div>
+          <strong>Nandhini Swaminathan</strong>, David Danks.<br>
+          <span class="pub-venue">IEEE International Conference on Quantum Computing and Engineering (QCE).</span>
+        </li>
+        <li>
+          <div class="pub-title"><a href="https://www.researchgate.net/profile/Nandhini-Swaminathan-2/publication/343353686_TRANSFER-_DEEP_INDUCTIVE_NETWORK_FOR_FACIAL_EMOTION_RECOGNITION/links/5f2bd95ba6fdcccc43ac92e3/TRANSFER-DEEP-INDUCTIVE-NETWORK-FOR-FACIAL-EMOTION-RECOGNITION.pdf" target="_blank">Transfer: Deep inductive network for facial emotion recognition</a></div>
+          Arpita Gupta, <strong>Nandhini Swaminathan</strong>, Ramadakrishnan Balakrishnan.<br>
+          <span class="pub-venue">Journal of Mechanics of Continua and Mathematical Sciences</span>, 15(7), 352.
+        </li>
+      </ul>
+    </section>
 
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <figure align = 'center'>
-                        
-                            <figcaption><h2 class="heading">About Me</h2></figcaption>
-                   
-                           
-                    </figure>
-                    <br>
-                    <table align='center' style="border-collapse: separate; border-spacing: 20px 0;">
-    <tr>
-        <td>
-            <a href="https://github.com/nandhiniswaminathan" target="_blank">
-                <i class="fab fa-github fa-2x" aria-hidden="true"></i>
-            </a>
-        </td>
-        <td>
-            <a href="https://linkedin.com/in/nandhini-swaminathan" target="_blank">
-                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
-            </a>
-        </td>
-        <td>
-            <a href="https://nandhiniswaminathan.medium.com/" target="_blank">
-                <i class="fab fa-medium fa-2x" aria-hidden="true"></i>
-            </a>
-        </td>
-        <td>
-            <a href="https://scholar.google.com/citations?user=yYs2d9EAAAAJ&hl=en" target="_blank">
-                <i class="fa-brands fa-google-scholar fa-2x" aria-hidden="true"></i>
-            </a>
-        </td>
-    </tr>
-</table>
-                    
-                </div>
+    <!-- Awards -->
+    <section id="awards">
+      <h2>Scholarships & Awards</h2>
+      <ul class="item-list">
+        <li>
+          <div class="item-name">LWT Summit Scholarship</div>
+          <div class="item-meta">Lesbians Who Tech — 2024</div>
+          <div class="item-desc">Competitive scholarship to attend the flagship summit, recognizing contributions to the tech community.</div>
+        </li>
+        <li>
+          <div class="item-name">Runner-up, Infinity Hackathon</div>
+          <div class="item-meta">Cognizant — May 2022</div>
+          <div class="item-desc">Second place in the annual competition, demonstrating technical and problem-solving capabilities.</div>
+        </li>
+        <li>
+          <div class="item-name">Delegate, Harvard Project for Asian and International Relations (HPAIR)</div>
+          <div class="item-meta">Harvard University — January 2021</div>
+          <div class="item-desc">Selected among 300 international students and professionals at a conference on foreign policy, technology, and science in the Asia region.</div>
+        </li>
+      </ul>
+    </section>
 
+    <!-- Leadership & Service -->
+    <section id="leadership">
+      <h2>Leadership & Service</h2>
+      <ul class="item-list">
+        <li>
+          <div class="item-name"><a href="https://www.acm.org/public-policy/ustpc" target="_blank">ACM US Technology Policy Committee (USTPC)</a></div>
+          <div class="item-meta">Executive Committee Member, 2023–present</div>
+          <div class="item-desc">Contributes to technology policy discussions and initiatives within the ACM.</div>
+        </li>
+        <li>
+          <div class="item-name"><a href="https://csw.ucsd.edu/" target="_blank">Chancellor's Advisory Committee on the Status of Women, UC San Diego</a></div>
+          <div class="item-meta">Committee Member, 2023–2025</div>
+          <div class="item-desc">Advises the Chancellor on gender equity and the status of women at UC San Diego.</div>
+        </li>
+        <li>
+          <div class="item-name"><a href="https://cse.ucsd.edu/about/diversity" target="_blank">DEI Committee, UCSD CSE</a></div>
+          <div class="item-meta">Committee Member, 2023–2024</div>
+          <div class="item-desc">Contributed to DEI initiatives in Computer Science and Engineering; represented the department at external conferences and supported underrepresented groups in computing.</div>
+        </li>
+        <li>
+          <div class="item-name">Illuminate (NGO)</div>
+          <div class="item-meta">Student Volunteer and Teacher, 2019–2020</div>
+        </li>
+      </ul>
+    </section>
 
-                <div class="col-md-8">
-                    <p>
-                        <br><br><br>
-                        I am a Ph.D. student in the Halıcıoğlu Data Science Institute  at UC San Diego advised by Dr. David Danks.  
-                My research focuses on the design, development, and governance of AI systems 
-             by advancing techniques for fairness, bias mitigation, and the ethical deployment of machine learning systems.
-<br><br>
-I approach these challenges using tools from game theory, reinforcement learning, and AI safety, with an emphasis on building adaptive, accountable
- systems that function effectively in dynamic and uncertain environments.
-                        <br><br>
-                       
-       <strong style="color: #000000;">
-    I am currently seeking internships in both industry and academia. My goal is to continue conducting sociotechnical research that
-    supports the ethical and responsible deployment of AI and machine learning systems.
-</strong>            
-     <h2>Skills</h2>
-    <p style="text-align: left;">
-       
-        <strong>Languages:</strong> Python, R, C++, C#, LaTeX, HTML/CSS<br>
-        <strong>Tools & Platforms:</strong> GitHub, Notion, Unix<br>
-        <strong>ML Tools:</strong> Keras, TensorFlow, Scikit-learn<br>
-        <strong>Applications:</strong> LaTeX, Notion, GitHub<br>
-        <strong>Research Areas:</strong> Machine Learning, Human-Centered Design, Policy and Game Theory
+    <!-- Writing -->
+    <section id="writing">
+      <h2>Writing</h2>
+      <ul class="writing-list">
+        <li>
+          <span class="writing-info">
+            <a href="https://nandhiniswaminathan.medium.com/neuro-symbolic-ai-2fc77b544126" target="_blank">"Neuro-Symbolic" AI</a>
+            — <em>Where deep learning meets traditional rule-based coding.</em>
+          </span>
+          <span class="writing-date">Mar 2022</span>
+        </li>
+        <li>
+          <span class="writing-info">
+            <a href="https://nandhiniswaminathan.medium.com/how-gravity-could-unravel-the-mysteries-of-the-fifth-dimension-823165bdd03d" target="_blank">How Gravity Could Unravel the Mysteries of the Fifth Dimension</a>
+            — <em>And how the Large Hadron Collider is helping solve it.</em>
+          </span>
+          <span class="writing-date">Jan 2024</span>
+        </li>
+        <li>
+          <span class="writing-info">
+            <a href="https://nandhiniswaminathan.medium.com/book-review-the-big-nine-by-amy-webb-ec1a2e861371" target="_blank">Book Review: <em>The Big Nine</em> by Amy Webb</a>
+            — <em>Bridging fiction, mystery, and technology.</em>
+          </span>
+          <span class="writing-date">Sep 2023</span>
+        </li>
+        <li>
+          <span class="writing-info">
+            <a href="https://medium.com/the-research-nest/image-refinement-essentials-1c838554089c" target="_blank">Image Refinement Essentials</a>
+            — <em>Bayesian techniques, Markov random fields, and Gibbs sampling.</em>
+          </span>
+          <span class="writing-date">Jul 2023</span>
+        </li>
+        <li>
+          <span class="writing-info">
+            <a href="https://nandhiniswaminathan.medium.com/meta-quest-3-vs-vision-pro-fb9e3a7cbb4" target="_blank">Meta Quest 3 vs. Vision Pro</a>
+            — <em>A comprehensive comparison of VR headsets.</em>
+          </span>
+          <span class="writing-date">Jun 2023</span>
+        </li>
+        <li>
+          <span class="writing-info">
+            <a href="https://nandhiniswaminathan.medium.com/build-a-docker-container-for-your-python-application-in-5-minutes-ceb8e527e8f1" target="_blank">Build a Docker Container for Your Python Application in 5 Minutes</a>
+            — <em>Containerization using Docker and an intro to Kubernetes.</em>
+          </span>
+          <span class="writing-date">Jun 2023</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>I'm always open to discussing research, collaboration, or new opportunities. The best way to reach me is <a href="mailto:nswaminathan@ucsd.edu">by email</a>.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Nandhini Swaminathan &middot; UC San Diego</p>
+    <p class="footer-social">
+      <a href="https://github.com/nandhiniswaminathan" target="_blank">GitHub</a> &middot;
+      <a href="https://linkedin.com/in/nandhini-swaminathan" target="_blank">LinkedIn</a> &middot;
+      <a href="https://nandhiniswaminathan.medium.com/" target="_blank">Medium</a> &middot;
+      <a href="https://scholar.google.com/citations?user=yYs2d9EAAAAJ&hl=en" target="_blank">Google Scholar</a>
     </p>
+  </footer>
 
-<!-- End #skills -->
-
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End #about -->
-   <div id="publications" class="background-alt">
-    <div class="container">
-        
-         <div align="center">
-            <h2 class="heading">Selected Publications</h2>
-             
-        </div>
-        <div class="row">
-
-            <!-- Publication 1 -->
-            <div class="project shadow-large no-image">
-                <div class="project-info">
-                    <h3>
-                        <a href="https://link.springer.com/article/10.1007/s44206-024-00088-0" target="_blank">Governing ethical gaps in distributed AI development</a>
-                    </h3>
-                    <p align='left'><strong>Nandhini Swaminathan</strong>, David Danks. <br> <i>Digital Society, 3(1), 7.</i></p>
-                </div>
-            </div>
-
-            <!-- Publication 2 -->
-            <div class="project shadow-large no-image">
-                <div class="project-info">
-                    <h3>
-                        <a href="https://arxiv.org/abs/2404.19256" target="_blank">AI, pluralism, and (social) compensation</a>
-                    </h3>
-                    <p align='left'><strong>Nandhini Swaminathan</strong>, David Danks. <br> <i>Pluralistic Alignment Workshop at NeurIPS.</i></p>
-                </div>
-            </div>
-
-            <!-- Publication 3 -->
-            <div class="project shadow-large no-image">
-                <div class="project-info">
-                    <h3>
-                        <a href="https://arxiv.org/abs/2403.15646" target="_blank">Application of the NIST AI Risk Management Framework to surveillance technology</a>
-                    </h3>
-                    <p align='left'><strong>Nandhini Swaminathan</strong>, David Danks. <br> <i>arXiv preprint.</i></p>
-                </div>
-            </div>
-           <!-- Publication 4 -->
-            <div class="project shadow-large no-image">
-                <div class="project-info">
-                    <h3>
-                        <a href="https://ieeexplore.ieee.org/abstract/document/10821054" target="_blank">Identification and Mitigating Bias in Quantum Machine Learning</a>
-                    </h3>
-                    <p align='left'><strong>Nandhini Swaminathan</strong>, David Danks. <br> <i>IEEE International Conference on Quantum Computing and Engineering (QCE)</i></p>
-                </div>
-            </div>
-            <!-- Publication 5 -->
-            <div class="project shadow-large no-image">
-                <div class="project-info">
-                    <h3>
-                        <a href="https://www.researchgate.net/profile/Nandhini-Swaminathan-2/publication/343353686_TRANSFER-_DEEP_INDUCTIVE_NETWORK_FOR_FACIAL_EMOTION_RECOGNITION/links/5f2bd95ba6fdcccc43ac92e3/TRANSFER-DEEP-INDUCTIVE-NETWORK-FOR-FACIAL-EMOTION-RECOGNITION.pdf" target="_blank">Transfer: Deep inductive network for facial emotion recognition</a>
-                    </h3>
-                    <p align='left'>Arpita Gupta, <strong>Nandhini Swaminathan</strong>, Ramadakrishnan Balakrishnan. <br> <i>Journal of Mechanics of Continua and Mathematical Sciences, 15(7), 352.</i></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-    <!-- End #publications -->
-     <div id="awards">
-    <div class="container">
-        <h2 class="heading">Scholarships & Awards</h2>
-
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-
-                <!-- Lesbians Who Tech Summit Scholarship -->
-                <div class="optional-section-block shadow-large">
-                    <h3>LWT Summit Scholarship</h3>
-                    <h4>Recipient (2024)</h4>
-                    <p>
-                        Awarded a competitive scholarship to attend the flagship LWT Summit, recognizing potential and contributions to the tech community.
-                    </p>
-                </div>
-
-                <!-- Infinity Hackathon -->
-                <div class="optional-section-block shadow-large">
-                    <h3>Runner-up, Infinity Hackathon</h3>
-                    <h4>Cognizant (May 2022)</h4>
-                    <p>
-                        Achieved second place in the annual competition organized in association with Cognizant, demonstrating exceptional technical and problem-solving capabilities in a high-pressure environment.
-                    </p>
-                </div>
-
-                <!-- MLH Fellowship -->
-                <div class="optional-section-block shadow-large">
-                    <h3>MLH Fellow</h3>
-                    <h4>Major League Hacking (June – August 2021)</h4>
-                    <p>
-                        Selected for a 12-week intensive internship alternative, sponsored by Meta and GitHub, focusing on Site Reliability Engineering (SRE) and DevOps.
-                    </p>
-                </div>
-                
-                <!-- HPAIR Delegate -->
-                <div class="optional-section-block shadow-large">
-                    <h3>Delegate, Harvard Project for Asian and International Relations (HPAIR)</h3>
-                    <h4>Harvard University (January 2021)</h4>
-                    <p>
-                        Chosen to join 300 international students and young professionals at a conference focused on key issues in the Asia region, including foreign policy, technology, and science.
-                    </p>
-                </div>
-
-        
-                
-                <!-- Oracle Certification -->
-                <div class="optional-section-block shadow-large">
-                    <h3>Certified Junior Associate, Java SE Programmer</h3>
-                    <h4>Oracle </h4>
-                    <p>
-                        Achieved a score of 98.6% on the Oracle Certified Associate, Java SE Programmer test.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-        <!-- End .row -->
-    </div>
-</div>
-
-    <!-- End #awards -->
-<div id="leadership" class="optional-section background-alt">
-    <div class="container">
-        <h2 class="heading">Leadership and Service</h2>
-
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-
-                <!-- Block for ACM -->
-                <div class="optional-section-block shadow-large">
-                    <h3>
-                        <a href="https://www.acm.org/public-policy/ustpc" target="_blank">ACM US Technology Policy Committee (USTPC)</a>
-                    </h3>
-                    <h4>Executive Committee Member (2023–current)</h4>
-                    <p>
-                        Contribute to technology policy discussions and initiatives within the ACM.
-                    </p>
-                </div>
-                <!-- End .optional-section-block -->
-
-                <!-- Block for UCSD -->
-                <div class="optional-section-block shadow-large">
-                    <h3>
-                        <a href="https://csw.ucsd.edu/" target="_blank">Chancellor's Advisory Committee on the Status of Women (CSW), UCSD</a>
-                    </h3>
-                    <h4>Committee Member (2023–2025)</h4>
-                    <p>
-                        Advise the Chancellor on issues related to gender equity and the status of women at UC San Diego.
-                    </p>
-                </div>
-                <!-- End .optional-section-block -->
-<div class="optional-section-block shadow-large">
-    <h3>
-        <a href="https://cse.ucsd.edu/about/diversity" target="_blank"> DEI Committee, UCSD CSE</a>
-    </h3>
-    <h4>Committee Member (2023–2024)</h4>
-    <p>
-        Contributed to DEI initiatives to promote an inclusive environment within the Department of Computer Science and Engineering. 
-        Represented the department at external DEI conferences and collaborated on programs supporting underrepresented groups in computing.
-    </p>
-</div>
-                <!-- End .optional-section-block -->
-                <!-- Block for Illuminate -->
-                <div class="optional-section-block shadow-large">
-                    <h3>Illuminate (NGO)</h3>
-                    <h4>Student Volunteer and Teacher (2019–2020)</h4>
-                    <p>
-                        Volunteered to teach and support educational programs for an NGO.
-                    </p>
-                </div>
-                <!-- End .optional-section-block -->
-
-            </div>
-        </div>
-        <!-- End .row -->
-    </div>
-</div>
-<!-- End #leadership -->
-<div id="writing">
-    <div class="container">
-        <h2 class="heading">Writing</h2>
-        <div class="row">
-
-            <!-- Article 1: Neuro-Symbolic AI -->
-            <div class="col-md-4 col-sm-6">
-                <!-- IMPORTANT: Replace the href with your article link and the src with your image path -->
-                <a href="https://nandhiniswaminathan.medium.com/neuro-symbolic-ai-2fc77b544126" target="_blank" class="writing-card-link">
-                    <div class="writing-card">
-                        <div class="writing-card-image">
-                            <img src="images/neuro-symbolic.jpg" alt="Neuro-Symbolic AI article image"/>
-                        </div>
-                        <div class="writing-card-content">
-                            <h3>“Neuro-Symbolic” AI</h3>
-                            <p>Where deep learning meets traditional rule-based coding.</p>
-                            <span class="writing-card-date">Mar 23, 2022</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Article 2: Fifth Dimension -->
-            <div class="col-md-4 col-sm-6">
-                <!-- IMPORTANT: Replace the href with your article link and the src with your image path -->
-                <a href="https://nandhiniswaminathan.medium.com/how-gravity-could-unravel-the-mysteries-of-the-fifth-dimension-823165bdd03d" target="_blank" class="writing-card-link">
-                    <div class="writing-card">
-                        <div class="writing-card-image">
-                            <img src="images/fifth-dimension.jpg" alt="Fifth Dimension article image"/>
-                        </div>
-                        <div class="writing-card-content">
-                            <h3>How Gravity Could Unravel the Mysteries of the Fifth Dimension</h3>
-                            <p>And how the Large Hadron Collider is helping solve it.</p>
-                            <span class="writing-card-date">Jan 30, 2024</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Article 3: Book Review -->
-            <div class="col-md-4 col-sm-6">
-                <!-- IMPORTANT: Replace the href with your article link and the src with your image path -->
-                <a href="https://nandhiniswaminathan.medium.com/book-review-the-big-nine-by-amy-webb-ec1a2e861371" target="_blank" class="writing-card-link">
-                    <div class="writing-card">
-                        <div class="writing-card-image">
-                            <img src="images/big-nine.jpg" alt="The Big Nine book review image"/>
-                        </div>
-                        <div class="writing-card-content">
-                            <h3>Book Review: The Big Nine by Amy Webb</h3>
-                            <p>Bridging Fiction, Mystery, and Technology: A Dive into The Big Nine.</p>
-                            <span class="writing-card-date">Sep 3, 2023</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Article 4: Image Refinement -->
-            <div class="col-md-4 col-sm-6">
-                <a href="https://medium.com/the-research-nest/image-refinement-essentials-1c838554089c?source=user_profile_page---------3-------------39ecfbbc2475----------------------" target="_blank" class="writing-card-link">
-                    <div class="writing-card">
-                        <div class="writing-card-image">
-                            <img src="images/image-refinement.jpg" alt="Image Refinement article image"/>
-                        </div>
-                        <div class="writing-card-content">
-                            <h3>Image Refinement Essentials</h3>
-                            <p>Navigating Bayesian Techniques, Markov Random Fields, and Gibbs Sampling.</p>
-                            <span class="writing-card-date">Jul 29, 2023</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Article 5: VR Headsets -->
-            <div class="col-md-4 col-sm-6">
-                <!-- IMPORTANT: Replace the href with your article link and the src with your image path -->
-                <a href="https://nandhiniswaminathan.medium.com/meta-quest-3-vs-vision-pro-fb9e3a7cbb4" target="_blank" class="writing-card-link">
-                    <div class="writing-card">
-                        <div class="writing-card-image">
-                            <img src="images/vr-headsets.jpg" alt="VR Headsets article image"/>
-                        </div>
-                        <div class="writing-card-content">
-                            <h3>Meta Quest 3 vs. Vision Pro</h3>
-                            <p>A Comprehensive Comparison Of VR Headsets.</p>
-                            <span class="writing-card-date">Jun 23, 2023</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Article 6: Docker Container -->
-            <div class="col-md-4 col-sm-6">
-                 <a href="https://nandhiniswaminathan.medium.com/build-a-docker-container-for-your-python-application-in-5-minutes-ceb8e527e8f1" target="_blank" class="writing-card-link">
-                    <div class="writing-card">
-                        <div class="writing-card-image">
-                            <img src="images/docker.jpg" alt="Docker article image"/>
-                        </div>
-                        <div class="writing-card-content">
-                            <h3>Build A Docker Container For Your Python Application In 5 Minutes</h3>
-                            <p>Containerization using Docker and an intro to Kubernetes.</p>
-                            <span class="writing-card-date">Jun 19, 2023</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-        </div>
-    </div>
-</div>
-<!-- End #writing -->
-
-
-  
-<div id="contact" class="background-alt">
-    <h2>Get in Touch</h2>
-    
-    <!-- A friendly message to the visitor -->
-    <p style="color: #0; max-width: 550px; margin: 0 auto 25px auto;">
-        I'm always open to discussing research, collaboration, or new opportunities. The best way to reach me is by email.
-    </p>
-
-    <!-- The new email button -->
-    <div id="contact-email">
-        <a href="mailto:nswaminathan@ucsd.edu" class="btn-rounded-white">Email Me</a>
-    </div>
-
-</div>
-    
-        <!-- End #contact-form -->
-    </div>
-    <!-- End #contact -->
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-5 copyright">
-                    <p>
-                       This project is derived from a repository by Sam Showalter. Used with permission.  
-                    </p>
-                </div>
-                <div class="col-sm-5 social">
-                    <ul>
-                        <li>
-                            <a href="https://github.com/nandhiniswaminathan" target="_blank"><i class="fab fa-github" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://linkedin.com/in/nandhini-swaminathan" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://nandhiniswaminathan.medium.com/" target="_blank"><i class="fab fa-medium" aria-hidden="true"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- End footer -->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/scripts.min.js"></script>
-    <script src="./js/to.top.js"></script>
-    <script>
+  <script src="./js/three.r92.min.js"></script>
+  <script src="./js/vanta.birds.min.js"></script>
+  <script>
     VANTA.BIRDS({
-      el: "#wm", // The element where the animation will be rendered
+      el: "#hero",
       mouseControls: true,
       touchControls: true,
       gyroControls: false,
@@ -704,9 +487,9 @@ I approach these challenges using tools from game theory, reinforcement learning
       minWidth: 200.00,
       scale: 1.00,
       scaleMobile: 1.00,
-      backgroundColor: 0xf5f5f5, // Light grey background
-      color1: 0x0,          // Black birds
-      color2: 0x808080,      // Grey birds
+      backgroundColor: 0xf7f7f8,
+      color1: 0x0,
+      color2: 0x808080,
       colorMode: "lerpGradient",
       birdSize: 1.20,
       wingSpan: 25.00,
@@ -715,8 +498,8 @@ I approach these challenges using tools from game theory, reinforcement learning
       alignment: 25.00,
       cohesion: 25.00,
       quantity: 4.00
-    })
-    </script>
-</body>
+    });
+  </script>
 
+</body>
 </html>
